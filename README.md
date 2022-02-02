@@ -9,3 +9,4 @@ Syntax afspraken:
  - Naamgeving Code/variables in Camelcase, Example: minMaxMonth
  - Geburikte talen: HTML, CSS, SQL en PHP. 
  -
+ -
