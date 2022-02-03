@@ -8,5 +8,5 @@ Syntax afspraken:
  - Alle naamgeving en comments in het Engels
  - Naamgeving Code/variables in Camelcase, Example: minMaxMonth
  - Gebruikte talen: HTML, CSS, SQL en PHP. 
- -
+ - sheeesh
  -
