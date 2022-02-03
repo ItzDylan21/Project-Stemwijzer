@@ -10,3 +10,5 @@ Syntax afspraken:
  - Gebruikte talen: HTML, CSS, SQL en PHP. 
  - testing lololol
  -
+
+Dit is een test zin van Arjan
