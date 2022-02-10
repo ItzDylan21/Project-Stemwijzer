@@ -30,7 +30,7 @@
 ?>
 
 <body>
- <p>what the dog doin?<p>
+ <p>what the dog doing?<p>
 <p><?php echo $naam; ?></p>
 
 </body>
