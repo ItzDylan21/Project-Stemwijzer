@@ -33,12 +33,6 @@
  <p>je moeder sheeeeeesh<p>
 <p><?php echo $naam; ?></p>
 
-
-
-
-
-
-
 </body>
 
 <?php 
