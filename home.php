@@ -30,7 +30,7 @@
 ?>
 
 <body>
- <p>je moeder sheeeeeesh<p>
+ <p>je moeder<p>
 <p><?php echo $naam; ?></p>
 
 </body>
