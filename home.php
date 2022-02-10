@@ -1,6 +1,6 @@
 <?php 
     // Connection file
-    require_once "config.php";   
+    require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
     $nummer = 66666666;
