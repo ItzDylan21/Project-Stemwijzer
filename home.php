@@ -30,7 +30,7 @@
 ?>
 
 <body>
- <p>je moeder hahahahahahahahahhah funny testing<p>
+ <p>je moeder hahahahahahahahahahahhahahahahhah funny testing<p>
 <p><?php echo $naam; ?></p>
 
 </body>
