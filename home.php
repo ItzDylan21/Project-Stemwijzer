@@ -5,6 +5,8 @@
     require 'includes/header.inc.php';
     $nummer = 66666666;
     $naam = "";
+
+
     // Prepare statements
     $sql1 = "SELECT Naam FROM testtabel WHERE Nummer = ?";
     if($stmt = mysqli_prepare($conn, $sql1))
@@ -30,9 +32,12 @@
 ?>
 
 <body>
- <p>what the dog doing?<p>
-<p><?php echo $naam; ?></p>
-
+    <p>
+        what the dog doing?
+    </p>
+    <p>
+<?php echo $naam; ?>
+    </p>
 </body>
 
 <?php 
