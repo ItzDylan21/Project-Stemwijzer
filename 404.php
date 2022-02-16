@@ -6,9 +6,9 @@
 ?>
 
 <body>
-    <p>
-        Oeps! Er ging wat fout.
-    </p>
+    <div class="error-style">
+    Oeps! Er ging wat fout.
+    </div>
 </body>
 
 <?php 
