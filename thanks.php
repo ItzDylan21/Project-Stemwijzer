@@ -22,8 +22,18 @@
         <h1>Bedankt voor het stemmen.</h1>
 
         <button onclick="window.location.href='home.php';">
-        Klik hier om terug te gaan
+        Klik hier om terug te keren naar het startscherm
         </button>
+
+        
+        <script type="text/javascript">   
+            function Redirect() 
+                {  
+                    window.location="home.php"; 
+                } 
+                document.write("Over 20 seconden wordt u automatisch teruggestuurd naar de homepagina."); 
+                setTimeout('Redirect()', 20000);   
+        </script>
     </div>
 </body>
 
