@@ -8,7 +8,7 @@
 
 
     // Prepare statements
-    $sql1 = "SELECT Naam FROM testtabel WHERE Nummer = ?";
+    $sql1 = "SELECT party FROM party WHERE partyID = ?";
     if($stmt = mysqli_prepare($conn, $sql1))
     {
         // Bind variables to the prepared statement as parameters
@@ -20,7 +20,7 @@
         {
             // Store result
             mysqli_stmt_store_result($stmt);          
-            // Bind result variables
+            // Bind result variables    
             mysqli_stmt_bind_result($stmt, $naam);
             if(mysqli_stmt_fetch($stmt))
             {

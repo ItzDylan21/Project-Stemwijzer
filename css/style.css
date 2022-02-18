@@ -3,3 +3,22 @@
     text-align: center;
     font-size: 24px;
 }
+
+.party-container {
+    float: left;
+    width: 33%;
+    height: 33%;
+    padding-bottom: 16px;
+    text-align: center;
+
+}
+
+.party-container img {
+    float: center;
+    object-fit: contain;
+    width: 125px;
+    height: 125px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+
+}

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2022 at 12:58 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Gegenereerd op: 18 feb 2022 om 17:12
+-- Serverversie: 10.4.22-MariaDB
+-- PHP-versie: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `code`
+-- Tabelstructuur voor tabel `code`
 --
 
 CREATE TABLE `code` (
@@ -39,7 +39,7 @@ CREATE TABLE `code` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Tabelstructuur voor tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -53,7 +53,7 @@ CREATE TABLE `member` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `municipality`
+-- Tabelstructuur voor tabel `municipality`
 --
 
 CREATE TABLE `municipality` (
@@ -61,10 +61,17 @@ CREATE TABLE `municipality` (
   `municipalityname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `municipality`
+--
+
+INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
+(3, 'Schagen');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `party`
+-- Tabelstructuur voor tabel `party`
 --
 
 CREATE TABLE `party` (
@@ -75,10 +82,25 @@ CREATE TABLE `party` (
   `municipalityID` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `party`
+--
+
+INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipalityID`) VALUES
+(3, 'CDA', 'Test info', 'cda.png', 3),
+(6, 'D66', 'het is wat het is', 'd66.png', 3),
+(7, 'GroenLinks', '', 'groenlinks.png', 3),
+(8, 'JESS lokaal', '', 'jesslokaal.png', 3),
+(9, 'Ouderen partij Schagen', '', 'ouderenpartijschagen.png', 3),
+(10, 'PvdA', '', 'pvda.png', 3),
+(11, 'SP', '', 'sp.png', 3),
+(12, 'VVD', '', 'vvd.png', 3),
+(13, 'Wens4u', '', 'wens4u.png', 3);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vote`
+-- Tabelstructuur voor tabel `vote`
 --
 
 CREATE TABLE `vote` (
@@ -88,37 +110,37 @@ CREATE TABLE `vote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `code`
+-- Indexen voor tabel `code`
 --
 ALTER TABLE `code`
   ADD PRIMARY KEY (`codeID`);
 
 --
--- Indexes for table `member`
+-- Indexen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`memberID`),
   ADD KEY `party` (`partyID`);
 
 --
--- Indexes for table `municipality`
+-- Indexen voor tabel `municipality`
 --
 ALTER TABLE `municipality`
   ADD PRIMARY KEY (`municipalityID`);
 
 --
--- Indexes for table `party`
+-- Indexen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD PRIMARY KEY (`partyID`),
   ADD KEY `municipality` (`municipalityID`);
 
 --
--- Indexes for table `vote`
+-- Indexen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD PRIMARY KEY (`voteID`),
@@ -126,45 +148,45 @@ ALTER TABLE `vote`
   ADD KEY `member` (`memberID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT voor een tabel `member`
 --
 ALTER TABLE `member`
   MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `municipality`
+-- AUTO_INCREMENT voor een tabel `municipality`
 --
 ALTER TABLE `municipality`
-  MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `party`
+-- AUTO_INCREMENT voor een tabel `party`
 --
 ALTER TABLE `party`
-  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `member`
+-- Beperkingen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `party` FOREIGN KEY (`partyID`) REFERENCES `party` (`partyID`);
 
 --
--- Constraints for table `party`
+-- Beperkingen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD CONSTRAINT `municipality` FOREIGN KEY (`municipalityID`) REFERENCES `municipality` (`municipalityID`);
 
 --
--- Constraints for table `vote`
+-- Beperkingen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD CONSTRAINT `code` FOREIGN KEY (`codeID`) REFERENCES `code` (`codeID`),
