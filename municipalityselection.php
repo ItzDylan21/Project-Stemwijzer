@@ -13,14 +13,16 @@
         </a>
     </div>
     <div class="header-back">
-        <a href="municipalityselection.php"><img src="media/back-icon.png"></a>
+
     </div>
 </div>
-<div class="container-3">
+
+<div class="container-2">
+    <div class="box-mun-button">
 <?php
     /*This shows clickable images of all the parties in the municipality of the user*/ 
-    $data = $_GET['ID'];
-    $sql2 = "SELECT * FROM party WHERE municipalityID = ?;";
+    $data = "municipalityID";
+    $sql2 = "SELECT * FROM municipality ORDER BY ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt,$sql2)) {
         echo "SQL statement failed";
@@ -30,14 +32,15 @@
         $result = mysqli_stmt_get_result($stmt);
 
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<div class='party-container'>
-                <a href='partydetails.php?ID=".$row['partyID']."'>
-                    <img src='media/".$row['partylogo']."'>
+            echo "<div class='box-mun-button'>
+                <a href='overviewparties.php?ID=".$row['municipalityID']."'>
+                    <button>".$row['municipalityname']."</button>
                 </a></div>";
         }
     }
 
 ?>
+    </div>
 </div>
 </body>
 

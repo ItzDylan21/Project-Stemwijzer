@@ -6,7 +6,10 @@
 ?>
 
 <body>
+    <div class=flex-container>
+        
  <p>Candidate<p>
+    </div>
 </body>
 
 <?php 

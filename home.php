@@ -4,11 +4,11 @@
     // Header file  
     require 'includes/header.inc.php';
     $nummer = 66666666;
-    $naam = "";
+    $naam = "CDA";
 
 
     // Prepare statements
-    $sql1 = "SELECT party FROM party WHERE partyID = ?";
+    $sql1 = "SELECT * FROM party WHERE partyname = ?";
     if($stmt = mysqli_prepare($conn, $sql1))
     {
         // Bind variables to the prepared statement as parameters

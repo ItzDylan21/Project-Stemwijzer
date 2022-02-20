@@ -1,3 +1,85 @@
+/*This defines the margine/height of the application*/
+.container-3, .container-2, body, html {
+    background-color: #F6F6F6;
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+/*This styling is used for every button on the application*/
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #38B2F9;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 24px;
+    width: 50%;
+}
+
+button:hover,
+button:focus {
+    background: #42b6fa;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/**/
+.container-1 {
+    display: flex;
+    flex-basis: 100%;
+    height: auto;
+    background-color: white;
+    align-items: flex-start;
+    }
+     
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    }
+
+.container-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: auto;
+    padding: 16px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.container-1,  body {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #A1A1A1;
+}
 .error-style {
     color: #707070;
     text-align: center;
@@ -5,20 +87,56 @@
 }
 
 .party-container {
-    float: left;
-    width: 33%;
-    height: 33%;
+    flex-basis: 30%;
+    height: auto;
     padding-bottom: 16px;
     text-align: center;
-
 }
 
 .party-container img {
-    float: center;
     object-fit: contain;
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
     padding-bottom: 5px;
     padding-right: 5px;
+    text-align: center;
 
 }
+/*This defines the styling and spacing for the municipality buttons*/
+.box-mun-button {
+    width: 94%;
+    text-align: center;
+    padding: 2%;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+/*This is a child of grid-container, this also specifies the width and spacing for the logo*/
+.header-logo {
+    flex-basis: 28%;
+    font-weight: 600;
+    text-align: center;
+    padding: 2%;
+    border-right: 1px solid #A1A1A1;
+}
+
+.header-back {
+    flex-basis: 68%;
+    text-align: right;
+    padding: 2%;
+}
+
+
+/*This defines the styling for the logo*/
+.gray-text, .blue-text {
+ font-size: 50px;
+}
+
+.gray-text  { 
+    color: #707070;
+}
+.blue-text {
+    color: #38B2F9;
+}
+

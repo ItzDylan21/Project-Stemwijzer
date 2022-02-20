@@ -35,6 +35,17 @@
     </head>
     
     <body>
+    <div class="container-1">
+    <div class="header-logo">
+      <a href="home.php">
+              <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+        </a>
+    </div>
+    <div class="header-back">
+        <a href="municipalityselection.php"><img src="media/back-icon.png"></a>
+    </div>
+</div>
+<div class="container-3">
         <div class="party-info">
             <?php
                 echo "<div class='artbox'>". $row['partyinfo']."</div>";
