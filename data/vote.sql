@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 feb 2022 om 17:12
+-- Gegenereerd op: 21 feb 2022 om 11:22
 -- Serverversie: 10.4.22-MariaDB
 -- PHP-versie: 8.1.2
 
@@ -50,6 +50,21 @@ CREATE TABLE `member` (
   `partyID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `member`
+--
+
+INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberPicture`, `partyID`) VALUES
+(1, 'Puck', 'de Nijs', 'cda-puckdenijs.jpg', 3),
+(2, 'Frans', 'Jansen', 'd66-fransjansen.jpg', 6),
+(3, 'Lambert', 'Riteco', 'groenlinks-lambertriteco.jpg', 7),
+(4, 'Lars', 'Dignum', 'jesslokaal-larsdignum.jpg', 8),
+(5, 'Rienk', 'Mud', 'pvda-rienkmud.jpeg', 10),
+(6, 'Perry', 'Vriend', 'seniorenpartij-perryvriend.jpg', 9),
+(7, 'Wim', 'Rijnders', 'sp-wimrijnders.jpg', 11),
+(8, 'Angelique', 'van Wijk', 'vvd-angeliquevanwijk.jpg', 12),
+(9, 'Merieke', 'Bredewold', 'wens4u-meriekebredewold.jpg', 13);
+
 -- --------------------------------------------------------
 
 --
@@ -66,7 +81,11 @@ CREATE TABLE `municipality` (
 --
 
 INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
-(3, 'Schagen');
+(3, 'Schagen'),
+(4, 'Den Helder'),
+(5, 'Amsterdam'),
+(6, 'Rotterdam'),
+(7, 'Alkmaar');
 
 -- --------------------------------------------------------
 
@@ -155,13 +174,13 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT voor een tabel `member`
 --
 ALTER TABLE `member`
-  MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `municipality`
 --
 ALTER TABLE `municipality`
-  MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `party`
