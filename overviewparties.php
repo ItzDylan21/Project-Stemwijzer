@@ -32,7 +32,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='party-container'>
                 <a href='partydetails.php?ID=".$row['partyID']."'>
-                    <img src='media/".$row['partylogo']."'>
+                    <img src='media/parties/".$row['partylogo']."'>
                 </a></div>";
         }
     }
