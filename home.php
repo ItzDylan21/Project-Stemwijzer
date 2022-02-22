@@ -3,12 +3,12 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
-    $nummer = 66666666;
-    $naam = "CDA";
+    $nummer = "0";
+    $naam = "";
 
 
     // Prepare statements
-    $sql1 = "SELECT * FROM party WHERE partyname = ?";
+    $sql1 = "SELECT partyname FROM party WHERE partyID = ?";
     if($stmt = mysqli_prepare($conn, $sql1))
     {
         // Bind variables to the prepared statement as parameters

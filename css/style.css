@@ -1,4 +1,4 @@
-/*This defines the margine/height of the application*/
+/*This defines the margins/height of the application*/
 .container-3, .container-2, body, html {
     background-color: #F6F6F6;
     height: 100%;
@@ -45,7 +45,7 @@ a, a:hover, a:focus, a:active {
     color: inherit;
 }
 
-/**/
+/*This is the styling for the flex container that is used for the headers troughout the whole website*/
 .container-1 {
     display: flex;
     flex-basis: 100%;
@@ -53,7 +53,7 @@ a, a:hover, a:focus, a:active {
     background-color: white;
     align-items: flex-start;
     }
-     
+/*This is styling for the flex container on the partydetails and municipalityselection pages*/ 
 .container-2 {
     display: flex;
     flex-direction: row;
@@ -62,7 +62,7 @@ a, a:hover, a:focus, a:active {
     justify-content: space-around;
     height: auto;
     }
-
+/*This is styling for the flex container on the overviewparties page*/
 .container-3 {
     display: flex;
     flex-direction: row;
@@ -74,25 +74,26 @@ a, a:hover, a:focus, a:active {
     margin-top: 16px;
     text-align: center;
 }
-
+/*This is the border styling which runs troughout the whole website*/
 .container-1,  body {
     border-style: solid;
     border-width: 1px;
     border-color: #A1A1A1;
 }
+/*This is the styling for the 404 page*/
 .error-style {
     color: #707070;
     text-align: center;
     font-size: 24px;
 }
-
+/*This is the styling for the partyoverview page*/
 .party-container {
     flex-basis: 30%;
     height: auto;
     padding-bottom: 16px;
     text-align: center;
 }
-
+/*This is the styling for the images of the partyoverview page*/
 .party-container img {
     object-fit: contain;
     width: 100px;
@@ -120,7 +121,7 @@ a, a:hover, a:focus, a:active {
     padding: 2%;
     border-right: 1px solid #A1A1A1;
 }
-
+/*This is the styling for the back icon button which returns the user to the homepage/previous page*/
 .header-back {
     flex-basis: 68%;
     text-align: right;
@@ -139,4 +140,10 @@ a, a:hover, a:focus, a:active {
 .blue-text {
     color: #38B2F9;
 }
-
+/*This is the styling for the party member pictures on the partydetails page*/
+.member-picture img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
