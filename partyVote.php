@@ -6,10 +6,12 @@
 ?>
 
 <body>
- <p>Party<p>
+    <p>Party<p>
+    Ingevulde code is:<br> <?php echo $_POST["verifCode"]; ?><br>
+    
 </body>
 
-<?php 
+<?php
     // Footer file
     require 'includes/footer.inc.php';
 ?>
