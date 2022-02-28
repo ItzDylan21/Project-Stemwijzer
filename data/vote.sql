@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2022 at 09:11 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Gegenereerd op: 28 feb 2022 om 17:34
+-- Serverversie: 10.4.22-MariaDB
+-- PHP-versie: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `code`
+-- Tabelstructuur voor tabel `code`
 --
 
 CREATE TABLE `code` (
@@ -39,7 +39,7 @@ CREATE TABLE `code` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Tabelstructuur voor tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -52,11 +52,11 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `member`
+-- Gegevens worden geëxporteerd voor tabel `member`
 --
 
 INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberListOrder`, `memberPicture`, `partyID`) VALUES
-(1, ' P. (Puck) ', 'de Nijs-Visser', 1, '', 3),
+(1, ' P. (Puck) ', 'de Nijs-Visser', 1, 'cda-puckdenijs.jpg', 3),
 (2, ' J. (Co) ', 'Wiskerke', 2, '', 3),
 (3, ' D. (Debby) ', 'Burger-de Graaf', 3, '', 3),
 (4, ' B.J. (Boudien) ', 'Glashouwer', 4, '', 3),
@@ -106,7 +106,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (48, ' S.M. (Sander) ', 'Lensink', 48, '', 3),
 (49, ' H.C. (Bram) ', 'Broersen', 49, '', 3),
 (50, ' J.C.J. (Jelle) ', 'Beemsterboer', 50, '', 3),
-(51, ' P.F.J. (Perry)', 'Vriend', 1, '', 4),
+(51, ' P.F.J. (Perry)', 'Vriend', 1, 'seniorenpartij-perryvriend.jpg', 4),
 (52, ' A.S. (Andre)', 'Groot', 2, '', 4),
 (53, ' M.C.M. (Marga)', 'Mulder-Keij', 3, '', 4),
 (54, ' M.A.F. (Marianne)', 'Wijnker', 4, '', 4),
@@ -130,7 +130,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (72, ' M.A.J. (Ria)', 'Vriend-van der Helm', 22, '', 4),
 (73, ' E.J.M. (Ellen)', 'van de Wateringen', 23, '', 4),
 (74, ' J. (Jaap)', 'Wit', 24, '', 4),
-(76, ' A.M. (Angelique)', 'van Wijk - Ligthart', 1, '', 5),
+(76, ' A.M. (Angelique)', 'van Wijk - Ligthart', 1, 'vvd-angeliquevanwijk.jpg', 5),
 (77, ' W.J. (Willem-Jan)', 'Stam', 2, '', 5),
 (78, ' R.A.J. (Roel)', 'Takes', 3, '', 5),
 (79, ' J. (Jur)', 'Perton', 4, '', 5),
@@ -147,7 +147,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (90, ' T.A. (Thomas)', 'van der Ploeg', 15, '', 5),
 (91, ' P.J. (Piet)', 'Marees', 16, '', 5),
 (92, ' J. (Jan)', 'Bouwes', 17, '', 5),
-(93, ' L. (Lars)', 'Dignum', 1, '', 6),
+(93, ' L. (Lars)', 'Dignum', 1, 'jesslokaal-larsdignum.jpg', 6),
 (94, ' S.C. (Simco)', 'Kruijer', 2, '', 6),
 (95, ' J.P. (Jack)', 'Kruijer', 3, '', 6),
 (96, ' M. (Marijn)', 'Streefkerk', 4, '', 6),
@@ -177,7 +177,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (120, ' S. (Sander)', 'Kaandorp', 28, '', 6),
 (121, ' C. (Nel)', 'Raap - Zwart', 29, '', 6),
 (122, ' W.L. (Rens)', 'Cappon', 30, '', 6),
-(123, ' V.C. (Vera)', 'van Vuuren', 1, '', 7),
+(123, ' V.C. (Vera)', 'van Vuuren', 1, 'pvda-veravanvuuren.jpg', 7),
 (124, ' S. (Samuel)', 'Muntjewerf', 2, '', 7),
 (125, ' M.G. (Mirjam)', 'van Musscher', 3, '', 7),
 (126, ' A.H. (Helga)', 'Wagemaker', 4, '', 7),
@@ -204,7 +204,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (147, ' M.A.J. (Marc)', 'Moussault', 25, '', 7),
 (148, ' F. (Erik)', 'van Vliet', 26, '', 7),
 (149, ' M.A. (Marjan)', 'Leijen', 27, '', 7),
-(177, ' L.A.J. (Lambert)', 'Riteco', 1, '', 8),
+(177, ' L.A.J. (Lambert)', 'Riteco', 1, 'groenlinks-lambertriteco.jpg', 8),
 (178, ' J.W. (Joke)', 'Menkveld', 2, '', 8),
 (179, ' B.W. (Ben)', 'Sintenie', 3, '', 8),
 (180, ' A.J.J. (André)', 'Bijlsma', 4, '', 8),
@@ -219,7 +219,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (189, ' A.H.M. (Lineke)', 'Kleemans', 13, '', 8),
 (190, ' R. (Ruud)', 'Maarschall', 14, '', 8),
 (191, ' R.P. (Ruud)', 'Bakker', 15, '', 8),
-(192, ' F.N.J. (Frans)', 'Jansen', 1, '', 9),
+(192, ' F.N.J. (Frans)', 'Jansen', 1, 'd66-fransjansen.jpg', 9),
 (193, ' M. (Margriet)', 'Struijf', 2, '', 9),
 (194, ' H. (Harry)', 'Vogel', 3, '', 9),
 (195, ' J.G. (Hans)', 'Horn', 4, '', 9),
@@ -233,7 +233,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (203, ' M.S. (Marijke)', 'Meijer-van den Broek', 12, '', 9),
 (204, ' P.H. (Paul)', 'de Winter', 13, '', 9),
 (205, ' N.A. (Nick)', 'Velt', 14, '', 9),
-(206, ' W.P. (Wim)', 'Rijnders', 1, '', 10),
+(206, ' W.P. (Wim)', 'Rijnders', 1, 'sp-wimrijnders.jpg', 10),
 (207, ' U.L.M. (Ursula)', 'Smit-Kiekebos', 2, '', 10),
 (208, ' G.L. (Leo)', 'van der Harst', 3, '', 10),
 (209, ' A.M.M. (Jeanne)', 'Pouw', 4, '', 10),
@@ -246,7 +246,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (216, ' C.P. (Nel)', 'Loeve', 11, '', 10),
 (217, ' R.G. (Ronald)', 'Komen', 12, '', 10),
 (218, ' W.G. (Wilma)', 'Hoogeboom', 13, '', 10),
-(219, ' H.P. (Merieke)', 'Bredewold', 1, '', 11),
+(219, ' H.P. (Merieke)', 'Bredewold', 1, 'wens4u-meriekebredewold.jpg', 11),
 (220, ' J.H. (Jacqueline)', 'Freijsen-Vacano', 2, '', 11),
 (221, ' M.C. (Margreet)', 'Verloop', 3, '', 11),
 (222, ' L. (Linda)', 'Steijger', 4, '', 11),
@@ -260,12 +260,13 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (230, ' R.C.M. (Rob)', 'Hogenes', 12, '', 11),
 (231, ' P. (Piet)', 'Wit', 13, '', 11),
 (232, ' S. (Nina)', 'Obradović', 14, '', 11),
-(233, ' G.M. (Gaülli)', 'Stam', 15, '', 11);
+(233, ' G.M. (Gaülli)', 'Stam', 15, '', 11),
+(234, 'Test', 'persoon', 1, 'placeholder-member.png', 15);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `municipality`
+-- Tabelstructuur voor tabel `municipality`
 --
 
 CREATE TABLE `municipality` (
@@ -274,7 +275,7 @@ CREATE TABLE `municipality` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `municipality`
+-- Gegevens worden geëxporteerd voor tabel `municipality`
 --
 
 INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
@@ -287,7 +288,7 @@ INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `party`
+-- Tabelstructuur voor tabel `party`
 --
 
 CREATE TABLE `party` (
@@ -299,24 +300,25 @@ CREATE TABLE `party` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `party`
+-- Gegevens worden geëxporteerd voor tabel `party`
 --
 
 INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipalityID`) VALUES
-(3, 'CDA', 'Test info', 'cda.png', 3),
-(4, 'Seniorenpartij Schagen', '', 'ouderenpartijschagen.png', 3),
-(5, 'VVD', '', 'vvd.png', 3),
-(6, 'JessLokaal', '', 'jesslokaal.png', 3),
-(7, 'Partij van de Arbeid (P.v.d.A.)', '', 'pvda.png', 3),
-(8, 'GROENLINKS', '', 'groenlinks.png', 3),
-(9, 'D66', 'het is wat het is', 'd66.png', 3),
-(10, 'SP (Socialistische Partij)', '', 'sp.png', 3),
-(11, 'Wens4U (wij en Schagen voor u)', '', 'wens4u.png', 3);
+(3, 'CDA', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'cda.png', 3),
+(4, 'Seniorenpartij Schagen', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'ouderenpartijschagen.png', 3),
+(5, 'VVD', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'vvd.png', 3),
+(6, 'JessLokaal', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'jesslokaal.png', 3),
+(7, 'Partij van de Arbeid (P.v.d.A.)', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'pvda.png', 3),
+(8, 'GroenLinks', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'groenlinks.png', 3),
+(9, 'D66', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'd66.png', 3),
+(10, 'SP (Socialistische Partij)', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'sp.png', 3),
+(11, 'Wens4U (wij en Schagen voor u)', '            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio id, autem ratione error eum esse itaque mollitia possimus aperiam nulla maxime suscipit animi ut cumque ipsam soluta amet sed, illo cupiditate asperiores voluptates aspernatur. Recusandae id velit laboriosam cupiditate consequatur deleniti, excepturi temporibus quas amet voluptatum. Vitae sed voluptatum adipisci architecto delectus amet, maiores tenetur, porro consequatur incidunt non perferendis sit, et blanditiis ex! Totam neque ea earum. Ratione corporis aspernatur fuga minus dicta placeat ut molestiae, officia et, voluptates, neque quidem inventore. Tempore totam saepe corporis quidem, labore nemo placeat, voluptatem dicta laborum animi deleniti tempora quod cumque, necessitatibus libero explicabo pariatur. Iste, eos quo? Incidunt a eius dignissimos ab atque fugit ipsam rerum dicta quibusdam blanditiis tenetur itaque natus praesentium maiores quasi obcaecati ducimus quis sunt et saepe totam consequatur, illum ea!', 'wens4u.png', 3),
+(15, 'CDA', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit porro corrupti consequuntur, sunt accusamus aspernatur beatae consectetur sit officia error ex unde ea explicabo sapiente dolorem non saepe eos provident quis, possimus tempora hic reprehenderit. Temporibus, nobis quidem. Ipsam culpa delectus officia blanditiis quam quaerat, corrupti cumque beatae itaque, amet inventore ad? Nisi doloribus nostrum ex excepturi ullam facere in culpa, ipsam nihil labore fuga nam ut exercitationem delectus obcaecati, nulla natus ipsa officia eum cum dignissimos illo iste praesentium? Sint, atque! Sit quis veniam quisquam, labore tenetur asperiores voluptatum exercitationem neque similique voluptas, nisi enim in qui! Expedita quae pariatur nulla voluptas optio ex facere ullam a vero alias, explicabo ipsa. Sit iure, sed alias explicabo libero itaque sunt nemo iste voluptates voluptas delectus perferendis architecto iusto fugit quisquam ab? Perferendis amet non ex dignissimos voluptas beatae autem eligendi enim! ', 'cda.png', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vote`
+-- Tabelstructuur voor tabel `vote`
 --
 
 CREATE TABLE `vote` (
@@ -326,37 +328,37 @@ CREATE TABLE `vote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `code`
+-- Indexen voor tabel `code`
 --
 ALTER TABLE `code`
   ADD PRIMARY KEY (`codeID`);
 
 --
--- Indexes for table `member`
+-- Indexen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`memberID`),
   ADD KEY `party` (`partyID`);
 
 --
--- Indexes for table `municipality`
+-- Indexen voor tabel `municipality`
 --
 ALTER TABLE `municipality`
   ADD PRIMARY KEY (`municipalityID`);
 
 --
--- Indexes for table `party`
+-- Indexen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD PRIMARY KEY (`partyID`),
   ADD KEY `municipality` (`municipalityID`);
 
 --
--- Indexes for table `vote`
+-- Indexen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD PRIMARY KEY (`voteID`),
@@ -364,45 +366,45 @@ ALTER TABLE `vote`
   ADD KEY `member` (`memberID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT voor een tabel `member`
 --
 ALTER TABLE `member`
-  MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
--- AUTO_INCREMENT for table `municipality`
+-- AUTO_INCREMENT voor een tabel `municipality`
 --
 ALTER TABLE `municipality`
   MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `party`
+-- AUTO_INCREMENT voor een tabel `party`
 --
 ALTER TABLE `party`
-  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `member`
+-- Beperkingen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `party` FOREIGN KEY (`partyID`) REFERENCES `party` (`partyID`);
 
 --
--- Constraints for table `party`
+-- Beperkingen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD CONSTRAINT `municipality` FOREIGN KEY (`municipalityID`) REFERENCES `municipality` (`municipalityID`);
 
 --
--- Constraints for table `vote`
+-- Beperkingen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD CONSTRAINT `code` FOREIGN KEY (`codeID`) REFERENCES `code` (`codeID`),
