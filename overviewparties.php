@@ -4,16 +4,17 @@
     // Header file  
     require 'includes/header.inc.php';
 ?>
-
 <body>
 <div class="container-1">
     <div class="header-logo">
-      <a href="home.php">
+         <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
+        <a href="home.php">
               <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
         </a>
     </div>
     <div class="header-back">
-        <a href="municipalityselection.php"><img src="media/back-icon.png"></a>
+        <!-- This button brings the user back to the previous page-->
+        <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>
     </div>
 </div>
 <div class="container-3">
@@ -36,11 +37,9 @@
                 </a></div>";
         }
     }
-
 ?>
 </div>
 </body>
-
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

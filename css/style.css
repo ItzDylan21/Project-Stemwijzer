@@ -1,149 +1,214 @@
 /*This defines the margins/height of the application*/
-.container-3, .container-2, body, html {
-    background-color: #F6F6F6;
-    height: 100%;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+.container-3,
+.container-2,
+body,
+html {
+  background-color: #f6f6f6;
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 /*This styling is used for every button on the application*/
 button {
-    display: inline-block;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    background: #38B2F9;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-radius: 24px;
-    width: 50%;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #38b2f9;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 24px;
+  width: 50%;
 }
 
 button:hover,
 button:focus {
-    background: #42b6fa;
+  background: #42b6fa;
 }
 
 button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
+  outline: 1px solid #fff;
+  outline-offset: -4px;
 }
 
 button:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
-
 /*This is the styling for the flex container that is used for the headers troughout the whole website*/
 .container-1 {
-    display: flex;
-    flex-basis: 100%;
-    height: auto;
-    background-color: white;
-    align-items: flex-start;
-    }
-/*This is styling for the flex container on the partydetails and municipalityselection pages*/ 
+  display: flex;
+  flex-basis: 100%;
+  height: auto;
+  background-color: white;
+  align-items: flex-start;
+}
+/*This is styling for the flex container on the partydetails and municipalityselection pages*/
 .container-2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    height: auto;
-    }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+}
 /*This is styling for the flex container on the overviewparties page*/
 .container-3 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-    height: auto;
-    padding: 16px;
-    margin-top: 16px;
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: auto;
+  padding: 16px;
+  margin-top: 16px;
+  text-align: center;
+}
+/*This container is specifically made for the party details page*/
+.container-4 {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+  margin: 8px;
+  border: 2px solid white;
+  border-radius: 16px;
+}
+/*This is the styling for the information about the chosen party*/
+.container-5 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
 }
 /*This is the border styling which runs troughout the whole website*/
-.container-1,  body {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #A1A1A1;
+.container-1,
+html {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #a1a1a1;
 }
 /*This is the styling for the 404 page*/
 .error-style {
-    color: #707070;
-    text-align: center;
-    font-size: 24px;
+  color: #707070;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 30%;
+  font-weight: 400;
 }
 /*This is the styling for the partyoverview page*/
 .party-container {
-    flex-basis: 30%;
-    height: auto;
-    padding-bottom: 16px;
-    text-align: center;
+  flex-basis: 30%;
+  height: auto;
+  padding-bottom: 16px;
+  text-align: center;
 }
 /*This is the styling for the images of the partyoverview page*/
 .party-container img {
-    object-fit: contain;
-    width: 100px;
-    height: 100px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    text-align: center;
-
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  text-align: center;
 }
 /*This defines the styling and spacing for the municipality buttons*/
 .box-mun-button {
-    width: 94%;
-    text-align: center;
-    padding: 2%;
-    justify-content: space-around;
-    margin-bottom: 2%;
-    margin-top: 2%;
+  width: 94%;
+  text-align: center;
+  padding: 2%;
+  justify-content: space-around;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
-
 /*This is a child of grid-container, this also specifies the width and spacing for the logo*/
 .header-logo {
-    flex-basis: 28%;
-    font-weight: 600;
-    text-align: center;
-    padding: 2%;
-    border-right: 1px solid #A1A1A1;
+  flex-basis: 28%;
+  font-weight: 600;
+  text-align: center;
+  padding: 2%;
+  border-right: 1px solid #a1a1a1;
 }
 /*This is the styling for the back icon button which returns the user to the homepage/previous page*/
 .header-back {
-    flex-basis: 68%;
-    text-align: right;
-    padding: 2%;
+  flex-basis: 68%;
+  text-align: right;
+  padding: 2%;
 }
-
-
 /*This defines the styling for the logo*/
-.gray-text, .blue-text {
- font-size: 50px;
+.gray-text,
+.blue-text {
+  font-size: 50px;
 }
 
-.gray-text  { 
-    color: #707070;
+.gray-text {
+  color: #707070;
 }
 .blue-text {
-    color: #38B2F9;
+  color: #38b2f9;
+}
+/*Defines the style of the party leader picture div*/
+.partyleader-picture {
+  text-align: center;
+  flex-basis: 30%;
 }
 /*This is the styling for the party member pictures on the partydetails page*/
-.member-picture img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
+.partyleader-picture img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 32px;
+  border: 2px solid white;
+}
+/*This defines the styling for the partyleader name next to the img*/
+.partyleader-name {
+  flex-basis: 70%;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+.partyleader-name span {
+  margin-right: 4px;
+}
+/*Defines the styling for the information of the specific party*/
+.party-info-title {
+  color: #707070;
+  font-weight: 600;
+  font-size: 24px;
+  background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  background-repeat: repeat-x;
+  width: 50%;
+}
+
+.party-info-text {
+  margin-top: 4%;
+  flex-basis: 100%;
+  padding: 16px;
+  text-align: start;
 }
