@@ -21,7 +21,7 @@
 <?php
     /*This shows clickable images of all the parties in the municipality of the user*/ 
     $data = $_GET['ID'];
-    $sql2 = "SELECT * FROM party WHERE municipalityID = ?;";
+    $sql2 = "SELECT * FROM party WHERE municipalityID = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt,$sql2)) {
         echo "SQL statement failed";

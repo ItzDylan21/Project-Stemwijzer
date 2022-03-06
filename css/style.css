@@ -51,6 +51,18 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+/*This is the styling for the main flex container which is used troughout the whole website*/
+.container-main {
+  height: 1080px;
+  background-color: white;
+}
+.container-home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
 /*This is the styling for the flex container that is used for the headers troughout the whole website*/
 .container-1 {
   display: flex;
@@ -151,11 +163,14 @@ html {
   padding: 2%;
   border-right: 1px solid #a1a1a1;
 }
-/*This is the styling for the back icon button which returns the user to the homepage/previous page*/
+/*This is the styling for the (icon) button in the header*/
 .header-back {
   flex-basis: 68%;
   text-align: right;
   padding: 2%;
+}
+.header-back button {
+  width: 275px;
 }
 /*This defines the styling for the logo*/
 .gray-text,
@@ -163,11 +178,19 @@ html {
   font-size: 50px;
 }
 
+.home-text {
+  margin: 10%;
+}
+
 .gray-text {
   color: #707070;
 }
 .blue-text {
   color: #38b2f9;
+}
+.home-button {
+  width: 700px;
+  text-align: center;
 }
 /*Defines the style of the party leader picture div*/
 .partyleader-picture {
