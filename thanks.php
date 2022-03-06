@@ -13,17 +13,35 @@
         text-align: center;
     }
 
-    button{
-        background-color: #38B2F9;
+    .main-content{
+        margin-left: 10%;
+        margin-right: 10%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #a1a1a1;
     }
 </style>
+<div class="main-content">
+<div class="container-1">
+    <div class="header-logo">
+         <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
+        <a href="home.php">
+              <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+        </a>
+    </div>
+    <div class="header-back">
+        <!-- This button brings the user back to the previous page-->
+        <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>
+    </div>
+</div>
 <body>
-    <div class="main-content">
+    
         <h1>Bedankt voor het stemmen.</h1>
 
         <button onclick="window.location.href='home.php';">
         Klik hier om terug te keren naar het startscherm
         </button>
+        <br>
 
         
         <script type="text/javascript">   
