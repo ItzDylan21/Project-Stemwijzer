@@ -5,56 +5,43 @@
     require 'includes/header.inc.php';
 ?>
 <html>
-
-<head>
-</head>
-
-<body>  
-    <?php
-    // define variables and set to empty values
+<body>
+    <p>Verification<p>
+<?php
     $verifCode = "";
-    $verifCodeErrorMsg = "";
+?>
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["verifCode"])) {
-        $verifcodeErrorMsg = "Verificatie code is vereist";
-    } else {
-        $verifCode = test_input($_POST["verifCode"]);
-        // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$verifCode)) {
-        $verifCodeErrorMsg = "Only letters and white space allowed";
+    <script>
+        // Function to check if the code has alpha-numeric characters
+        function alphanumeric(inputtxt) {
+            var letterNumber = /^[0-9a-zA-Z]+$/;
+                if(inputtxt.value.match(letterNumber)) {
+                    return true;
+                }
+                    else { 
+                        alert('Uw code is incorrect.');
+                        return false;
+                    }
         }
-    }
-    }
+    </script>
 
-    function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-    }
-    ?>
+    
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="form1">
+        Vul uw verificatiecode hier in:
+        <!--Form field that accepts text, has a minimum amount of characters, a placeholder and other fun stuff -->
+        <input type="text" name="verifCode" size="16" minlength="8" placeholder="code hier" 
+        autocomplete="off" required autofocus>
+        <br>
 
-    <p>* required field</p>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-    Verificatie code:
-    <br>
-    <input type="text" name="verifCode">
-    *
-    <?php echo $verifCodeErrorMsg;?>
-    <br><br>
-    <input type="submit" name="submit" value="Valideer">  
+        <!--Button that submits data, verifies the code, and redirects user (doesn't have all that functionality yet!) -->
+        <input type="submit" value="Verifiëer code" onclick="alphanumeric(document.form1.verifCode)">
+        
     </form>
-
-    <?php
-    echo "<h2>Your Input:</h2>";
-    echo $verifCode;
-    ?>
 
 </body>
 </html>
-
 <?php
     // Footer file
     require 'includes/footer.inc.php';
 ?>
+

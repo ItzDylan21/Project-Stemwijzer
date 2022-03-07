@@ -7,7 +7,13 @@
 
 <body>
     <p>Party<p>
-    Ingevulde code is:<br> <?php echo $_POST["verifCode"]; ?><br>
+    Ingevulde code is:
+    <br>
+    <?php
+    echo $_POST["verifCode"];
+    
+    ?>
+    <br>
     
 </body>
 
