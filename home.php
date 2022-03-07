@@ -30,16 +30,6 @@
         }
     }
 ?>
-
-<!DOCTYPE html>
-<html>   
-<head>
-    <title>StemWijzer Home</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
-</head>
 <body>
 <div class="container-main">
     <div class="container-1">
@@ -49,7 +39,7 @@
         </div>
         <div class="header-back">
             <!-- This button brings the user to the party overview page-->
-            <a href="overviewparties.php">
+            <a href="municipalityselection.php">
                 <button>Overzicht partijen</button>
             </a>
         </div>
@@ -66,9 +56,7 @@
         </div>
     </div>
 </div>    
-
 </body>
-</html>
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

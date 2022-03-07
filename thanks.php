@@ -4,23 +4,7 @@
     // Header file  
     require 'includes/header.inc.php';
 ?>
-
-
-<style>
-    /* Temporary styling */
-    body{
-        background-color: white;
-        text-align: center;
-    }
-
-    .main-content{
-        margin-left: 10%;
-        margin-right: 10%;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #a1a1a1;
-    }
-</style>
+<body>
 <div class="main-content">
 <div class="container-1">
     <div class="header-logo">
@@ -34,16 +18,14 @@
         <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>
     </div>
 </div>
-<body>
-    
-        <h1>Bedankt voor het stemmen.</h1>
-
+        <h1><span class="gray-text">Bedankt voor het stemmen.</span></h1>
+    <div class="return-home-button">
         <button onclick="window.location.href='home.php';">
         Klik hier om terug te keren naar het startscherm
         </button>
+    </div>
         <br>
-
-        
+<div class="timer-text">
         <script type="text/javascript">   
             function Redirect() 
                 {  
@@ -53,5 +35,10 @@
                 setTimeout('Redirect()', 20000);   
         </script>
     </div>
+</div>
 </body>
+<?php
+    // Footer file
+    require "includes/footer.inc.php";
+?>
 

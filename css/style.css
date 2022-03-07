@@ -235,3 +235,19 @@ html {
   padding: 16px;
   text-align: start;
 }
+
+h1 {
+  margin-top: 64px;
+  text-align: center;
+}
+
+.return-home-button {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.timer-text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 16px;
+}
