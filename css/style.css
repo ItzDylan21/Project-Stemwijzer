@@ -128,6 +128,22 @@ html {
   margin-top: 30%;
   font-weight: 400;
 }
+
+.member-container {
+  flex-basis: 30%;
+  height: auto;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.member-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 32px;
+  border: 2px solid white;
+}
 /*This is the styling for the partyoverview page*/
 .party-container {
   flex-basis: 30%;
@@ -278,4 +294,11 @@ input[type="text"] {
   font-weight: 400;
   font-size: 24px;
   color: #ed4337;
+}
+
+.member-name {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-bottom: 64px;
 }
