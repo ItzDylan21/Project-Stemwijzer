@@ -18,25 +18,9 @@
 </div>
 <div class="container-2">
     <div class="error-style">
-    <p>Party<p>
-<<<<<<< HEAD
-    Ingevulde code is:
-    <br>
-    <?php
-    echo $_POST["verifCode"];
     
-    ?>
-    <br>
-    
-=======
-    Ingevulde code is:<br>
-    <?php 
-    echo $_POST["verifCode"]; 
-    ?>
-    <br>
     </div>
 </div>
->>>>>>> edece2ed7a71ea0b1f96419dea4ba544da496075
 </body>
 
 <?php
