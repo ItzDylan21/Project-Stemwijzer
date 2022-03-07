@@ -171,7 +171,7 @@ html {
 }
 /*This is a child of grid-container, this also specifies the width and spacing for the logo*/
 .header-logo {
-  flex-basis: 28%;
+  flex-basis: 35%;
   font-weight: 600;
   text-align: center;
   padding: 2%;
@@ -179,7 +179,7 @@ html {
 }
 /*This is the styling for the (icon) button in the header*/
 .header-back {
-  flex-basis: 68%;
+  flex-basis: 65%;
   text-align: right;
   padding: 2%;
 }
@@ -301,4 +301,9 @@ input[type="text"] {
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 64px;
+}
+
+.text-center {
+  text-align: center;
+  flex-basis: 100%;
 }

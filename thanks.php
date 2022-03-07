@@ -10,7 +10,10 @@
     <div class="header-logo">
          <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
         <a href="home.php">
-              <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+              <span class='gray-text'>Stem</span>
+        <?php
+        echo "<span class='blue-text'>".$muniTitle."</span>";
+        ?>
         </a>
     </div>
     <div class="header-back">

@@ -3,18 +3,21 @@
     require_once "includes/config.php";   
     // Header file  
     $partydata = $_GET['ID'];
-    $sql2 = "SELECT * FROM party WHERE partyID = ?;";
+    $sql2 = "SELECT party.partyname, municipality.municipalityname FROM party INNER JOIN municipality ON
+     party.municipalityID = municipality.municipalityID WHERE party.partyID = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt,$sql2)) {
         echo "SQL statement failed";
     } else{
-        mysqli_stmt_bind_param($stmt, "s", $partydata,);
+        mysqli_stmt_bind_param($stmt, "s", $partydata);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
     
         $row = mysqli_fetch_assoc($result);
         $title = $row['partyname'];
+        $muniTitle = $row['municipalityname'];
     }
+
 ?>
 <!DOCTYPE html>
 <html>   
@@ -35,9 +38,10 @@
 <div class="container-1">
     <div class="header-logo">
          <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
-        <a href="home.php">
-              <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
-        </a>
+         <span class='gray-text'>Stem</span>
+        <?php
+        echo "<span class='blue-text'>".$muniTitle."</span>";
+        ?>
     </div>
     <div class="header-back">
         <!-- This button brings the user back to the previous page-->
@@ -45,7 +49,13 @@
     </div>
 </div>
 <div class="container-3">
+
 <?php
+
+    echo "<div class='party-info-title text-center'>
+    <p>Overzicht partijleden $title</p>
+    </div>";
+
     /*This shows clickable images of all the parties in the municipality of the user*/ 
     $data = $_GET['ID'];
     $sql2 = "SELECT * FROM member WHERE partyID = ?";
@@ -62,7 +72,7 @@
             $lastName = $row['memberLastName'];
             
             echo "<div class='member-container'>
-                <a href='votesend.php?ID=".$row['partyID']."'>
+                <a href='votesend.php?ID=".$row['partyID']."?member=".$row['memberID']."'>
                     <img src='media/party-members/".$row['memberPicture']."'><br><span class='member-name'>
                     ".$firstName."</span>" , "<span class= 'member-name'>".$lastName."</span>
                 </a></div>";

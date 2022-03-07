@@ -36,7 +36,7 @@
     <div class="header-logo">
         <a href="home.php">
         <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
-        <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+        <span class="gray-text">Stem</span><span class="blue-text">Applicatie</span>
         </a>
     </div>
     <div class="header-back">

@@ -3,14 +3,29 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
+
+        $muniName = $_GET['ID'];
+        $sql2 = "SELECT * FROM municipality WHERE municipalityID = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt,$sql2)) {
+            echo "SQL statement failed";
+        } else{
+            mysqli_stmt_bind_param($stmt, "s", $muniName,);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+        
+            $row = mysqli_fetch_assoc($result);
+            $muniTitle = $row['municipalityname'];
+        }
 ?>
 <body>
 <div class="container-1">
-    <div class="header-logo">
-         <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
-        <a href="home.php">
-              <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
-        </a>
+<div class="header-logo">
+        <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
+        <span class='gray-text'>Stem</span>
+        <?php
+        echo "<span class='blue-text'>".$muniTitle."</span>";
+        ?>
     </div>
     <div class="header-back">
         <!-- This button brings the user back to the previous page-->

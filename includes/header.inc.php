@@ -6,5 +6,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
-    <title>StemWijzer</title>
+    <title>StemApplicatie</title>
 </head>

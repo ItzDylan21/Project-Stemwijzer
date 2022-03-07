@@ -9,7 +9,7 @@
 <div class="container-1">
 <div class="header-logo">
     <a href="home.php">
-        <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+        <span class="gray-text">Stem</span><span class="blue-text">Applicatie</span>
     </a>
 </div>
     <div class="header-back">
