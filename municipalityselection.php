@@ -13,7 +13,8 @@
         </a>
     </div>
     <div class="header-back">
-
+        <!-- This button brings the user back to the previous page-->
+        <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>
     </div>
 </div>
 

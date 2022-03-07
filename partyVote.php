@@ -4,9 +4,22 @@
     // Header file  
     require 'includes/header.inc.php';
 ?>
-
 <body>
+<div class="container-1">
+<div class="header-logo">
+    <a href="home.php">
+        <span class="gray-text">Stem</span><span class="blue-text">Wijzer</span>
+    </a>
+</div>
+    <div class="header-back">
+        <!-- This button brings the user back to the previous page-->
+        <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>
+    </div>
+</div>
+<div class="container-2">
+    <div class="error-style">
     <p>Party<p>
+<<<<<<< HEAD
     Ingevulde code is:
     <br>
     <?php
@@ -15,6 +28,15 @@
     ?>
     <br>
     
+=======
+    Ingevulde code is:<br>
+    <?php 
+    echo $_POST["verifCode"]; 
+    ?>
+    <br>
+    </div>
+</div>
+>>>>>>> edece2ed7a71ea0b1f96419dea4ba544da496075
 </body>
 
 <?php
