@@ -9,6 +9,27 @@
     <p>Verification<p>
 <?php
     $verifCode = "";
+    $sql3 = "SELECT * FROM code WHERE uniqueCode = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt,$sql3)) {
+        echo "SQL statement failed";
+    } 
+    else{
+        mysqli_stmt_bind_param($stmt, "s", $verifCode );
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+
+        }
+    }
+        if (mysql_num_rows($sql3) == 0 ) { 
+            echo 'Code bestaat niet';
+        }
+            else {
+                
+            }
+    
 ?>
 
     <script>
