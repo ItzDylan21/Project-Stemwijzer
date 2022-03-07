@@ -31,7 +31,6 @@
     }
 ?>
 <body>
-<div class="container-main">
     <div class="container-1">
         <div class="header-logo">
             <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
@@ -54,8 +53,7 @@
                 <button>Klik hier om te stemmen!</button>
             </a>
         </div>
-    </div>
-</div>    
+    
 </body>
 <?php 
     // Footer file

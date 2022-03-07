@@ -52,16 +52,14 @@ a:active {
   color: inherit;
 }
 /*This is the styling for the main flex container which is used troughout the whole website*/
-.container-main {
-  height: 1080px;
-  background-color: white;
-}
+
 .container-home {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  flex-basis: 100%;
 }
 /*This is the styling for the flex container that is used for the headers troughout the whole website*/
 .container-1 {

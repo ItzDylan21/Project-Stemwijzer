@@ -26,6 +26,7 @@
                     return true;
                 }
                     else { 
+                        //Deze alert message aanpassen???
                         alert('Uw code is incorrect.');
                         return false;
                     }
@@ -50,7 +51,7 @@
 <?php
     if(isset($_GET["error"])){
             if ($_GET["error"] == "codeincorrect"){
-              echo "<p>Uw code is incorrect!</p>";
+              echo "<p>Uw code is incorrect of al gebruikt!</p>";
             }
         }
     ?>

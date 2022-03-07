@@ -77,7 +77,7 @@
     <?php
         // Shows the party name of the chosen municipality,
         // and thus changes dynamically depending on the chosen party
-        echo "<div class='party-info-title'><p>Dit is de reden dat u op het ".$title." stemt!</p>","</div>";
+        echo "<div class='party-info-title'><p>".$title."</p>","</div>";
 
         $data =  $_GET['ID'];
         $sql2 = "SELECT * FROM party WHERE partyID = ?;";
