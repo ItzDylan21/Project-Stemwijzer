@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2022 at 09:55 PM
+-- Generation Time: Mar 07, 2022 at 09:47 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -31,17 +31,28 @@ CREATE TABLE `code` (
   `codeID` int(10) NOT NULL,
   `timeCreated` datetime NOT NULL,
   `uniqueCode` varchar(32) NOT NULL,
-  `codeUsed` tinyint(1) NOT NULL,
+  `codeUsed` tinyint(1) NOT NULL DEFAULT 0,
   `timeUsed` datetime NOT NULL,
-  `usedAfterExpired` int(5) NOT NULL
+  `usedAfterExpired` int(5) NOT NULL DEFAULT 0,
+  `municipalityID` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `code`
 --
 
-INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`) VALUES
-(0, '2022-03-06 21:49:48', '12345678', 0, '2022-03-06 21:49:48', 0);
+INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`, `municipalityID`) VALUES
+(0, '2022-03-06 21:49:48', '12345678', 0, '2022-03-06 21:49:48', 0, 3),
+(1, '2022-03-07 09:39:25', 'Yuu6eze9', 0, '2022-03-07 09:39:25', 0, 3),
+(2, '2022-03-07 09:42:11', 'i9G7m4Wf', 0, '2022-03-07 09:42:11', 0, 3),
+(3, '2022-03-07 09:42:34', 'DswLMaCq', 0, '2022-03-07 09:42:34', 0, 3),
+(4, '2022-03-07 09:42:46', 'DrMZ9rm3', 0, '2022-03-07 09:42:46', 0, 3),
+(5, '2022-03-07 09:42:46', 'M7kuyqWL', 0, '2022-03-07 09:42:46', 0, 3),
+(6, '2022-03-07 09:43:50', '84vW5JWv', 0, '2022-03-07 09:43:50', 0, 3),
+(7, '2022-03-07 09:43:50', 'urHudrUn', 0, '2022-03-07 09:43:50', 0, 3),
+(8, '2022-03-07 09:44:17', 'RVGA67HE', 0, '2022-03-07 09:44:17', 0, 3),
+(9, '2022-03-07 09:44:17', '63B2Mr2N', 0, '2022-03-07 09:44:17', 0, 3),
+(10, '2022-03-07 09:45:19', '84hd2DY8', 0, '2022-03-07 09:45:19', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -386,12 +397,6 @@ ALTER TABLE `vote`
 --
 ALTER TABLE `member`
   MODIFY `memberID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
-
---
--- AUTO_INCREMENT for table `municipality`
---
-ALTER TABLE `municipality`
-  MODIFY `municipalityID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `party`
