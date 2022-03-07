@@ -6,7 +6,7 @@
     $nummer = "0";
     $naam = "";
 
-
+    // This is a example of prepared statements and how they work
     // Prepare statements
     $sql1 = "SELECT partyname FROM party WHERE partyID = ?";
     if($stmt = mysqli_prepare($conn, $sql1))
@@ -47,7 +47,7 @@
     <div class="container-home">
          <!--This makes up the box for the homepage contents to allow for easy changes-->
         <div class="home-text">
-            <span class="gray-text">WELKOM</span>
+            <span class="gray-text">Welkom</span>
         </div>
         <div class="home-button">
             <a href="verification.php">

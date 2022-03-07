@@ -12,7 +12,6 @@
                 mysqli_stmt_bind_param($stmt, "s", $verifCode );
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
-
             while ($row = mysqli_fetch_assoc($result)) {
 
             }
@@ -24,7 +23,7 @@
                 //If the code exists in the database and has not been used before, the user gets redirected and a session gets started
                 else {
                     //Dylan hier kan je de sessie starten
-                        header('Location: /partyvote.php');
+                        header('Location: /partyvote.php?=codecorrect');
                 }
 
 ?>

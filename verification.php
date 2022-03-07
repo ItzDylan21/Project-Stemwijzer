@@ -13,11 +13,11 @@
     </a>
 </div>
     <div class="header-back">
-   <!--Only put the back button here if needed, logo also returns the user to the homepage-->
-    </div>
+        <!-- This button brings the user back to the previous page-->
+        <a href="javascript:history.go(-1)"><img src="media/back-icon.png"></a>    </div>
 </div>
 <div class="container-2">
-    <div class="error-style">
+    <div class="code-input-style">
     <script>
         // Function to check if the code has alpha-numeric characters
         function alphanumeric(inputtxt) {
@@ -31,29 +31,31 @@
                     }
         }
     </script>
-
-    
     <form action="includes/formhandler.inc.php" method="post" name="form1">
-        Vul uw verificatiecode hier in:
+        Vul uw verificatiecode hier in 
+        <br>
         <!--Form field that accepts text, has a minimum amount of characters, a placeholder and other fun stuff -->
-        <input type="text" name="verifCode" size="16" minlength="8" placeholder="code hier" 
+        <input type="text" class="code-char-input" name="verifCode" size="16" minlength="8" placeholder="type code hier" 
         autocomplete="off" required autofocus>
         <br>
 
         <!--Button that submits data, verifies the code, and redirects user (doesn't have all that functionality yet!) -->
-        <input type="submit" value="Verifiëer code" onclick="alphanumeric(document.form1.verifCode)">
+        <button type="submit" 
+              onclick="alphanumeric(document.form1.verifCode)"> Code Valideren
+        </button>
         
     </form>
-     </div>
-     </div>
-
-    <?php
+</div>
+<div class="code-error-message">
+<?php
     if(isset($_GET["error"])){
             if ($_GET["error"] == "codeincorrect"){
-              echo "<p>Uw code is incorrect</p>";
+              echo "<p>Uw code is incorrect!</p>";
             }
         }
     ?>
+</div>
+</div>
 </body>
 <?php 
     require "includes/footer.inc.php"

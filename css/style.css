@@ -251,3 +251,33 @@ h1 {
   font-weight: 600;
   margin-top: 16px;
 }
+
+.code-input-style {
+  color: #707070;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 16%;
+  font-weight: 400;
+  flex-basis: 100%;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  text-align: center;
+  width: 250px;
+}
+
+.code-char-input {
+  margin: 16px;
+}
+
+.code-error-message {
+  text-align: center;
+  margin: 24px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ed4337;
+}
