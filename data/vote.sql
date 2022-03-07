@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 09:47 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Mar 07, 2022 at 03:50 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,7 +65,7 @@ CREATE TABLE `member` (
   `memberFirstName` varchar(128) NOT NULL,
   `memberLastName` varchar(128) NOT NULL,
   `memberListOrder` int(5) NOT NULL,
-  `memberPicture` varchar(128) NOT NULL,
+  `memberPicture` varchar(128) NOT NULL DEFAULT 'placeholder-member.png',
   `partyID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -74,7 +74,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberListOrder`, `memberPicture`, `partyID`) VALUES
-(1, ' P. (Puck) ', 'de Nijs-Visser', 1, '', 3),
+(1, ' P. (Puck) ', 'de Nijs-Visser', 1, 'cda-puckdenijs.jpg', 3),
 (2, ' J. (Co) ', 'Wiskerke', 2, '', 3),
 (3, ' D. (Debby) ', 'Burger-de Graaf', 3, '', 3),
 (4, ' B.J. (Boudien) ', 'Glashouwer', 4, '', 3),
@@ -124,7 +124,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (48, ' S.M. (Sander) ', 'Lensink', 48, '', 3),
 (49, ' H.C. (Bram) ', 'Broersen', 49, '', 3),
 (50, ' J.C.J. (Jelle) ', 'Beemsterboer', 50, '', 3),
-(51, ' P.F.J. (Perry)', 'Vriend', 1, '', 4),
+(51, ' P.F.J. (Perry)', 'Vriend', 1, 'seniorenpartij-perryvriend.jpg', 4),
 (52, ' A.S. (Andre)', 'Groot', 2, '', 4),
 (53, ' M.C.M. (Marga)', 'Mulder-Keij', 3, '', 4),
 (54, ' M.A.F. (Marianne)', 'Wijnker', 4, '', 4),
@@ -148,7 +148,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (72, ' M.A.J. (Ria)', 'Vriend-van der Helm', 22, '', 4),
 (73, ' E.J.M. (Ellen)', 'van de Wateringen', 23, '', 4),
 (74, ' J. (Jaap)', 'Wit', 24, '', 4),
-(76, ' A.M. (Angelique)', 'van Wijk - Ligthart', 1, '', 5),
+(76, ' A.M. (Angelique)', 'van Wijk - Ligthart', 1, 'vvd-angeliquevanwijk.jpg', 5),
 (77, ' W.J. (Willem-Jan)', 'Stam', 2, '', 5),
 (78, ' R.A.J. (Roel)', 'Takes', 3, '', 5),
 (79, ' J. (Jur)', 'Perton', 4, '', 5),
@@ -165,7 +165,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (90, ' T.A. (Thomas)', 'van der Ploeg', 15, '', 5),
 (91, ' P.J. (Piet)', 'Marees', 16, '', 5),
 (92, ' J. (Jan)', 'Bouwes', 17, '', 5),
-(93, ' L. (Lars)', 'Dignum', 1, '', 6),
+(93, ' L. (Lars)', 'Dignum', 1, 'jesslokaal-larsdignum.jpg', 6),
 (94, ' S.C. (Simco)', 'Kruijer', 2, '', 6),
 (95, ' J.P. (Jack)', 'Kruijer', 3, '', 6),
 (96, ' M. (Marijn)', 'Streefkerk', 4, '', 6),
@@ -195,7 +195,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (120, ' S. (Sander)', 'Kaandorp', 28, '', 6),
 (121, ' C. (Nel)', 'Raap - Zwart', 29, '', 6),
 (122, ' W.L. (Rens)', 'Cappon', 30, '', 6),
-(123, ' V.C. (Vera)', 'van Vuuren', 1, '', 7),
+(123, ' V.C. (Vera)', 'van Vuuren', 1, 'pvda-veravanvuuren.jpg', 7),
 (124, ' S. (Samuel)', 'Muntjewerf', 2, '', 7),
 (125, ' M.G. (Mirjam)', 'van Musscher', 3, '', 7),
 (126, ' A.H. (Helga)', 'Wagemaker', 4, '', 7),
@@ -222,7 +222,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (147, ' M.A.J. (Marc)', 'Moussault', 25, '', 7),
 (148, ' F. (Erik)', 'van Vliet', 26, '', 7),
 (149, ' M.A. (Marjan)', 'Leijen', 27, '', 7),
-(177, ' L.A.J. (Lambert)', 'Riteco', 1, '', 8),
+(177, ' L.A.J. (Lambert)', 'Riteco', 1, 'groenlinks-lambertriteco.jpg', 8),
 (178, ' J.W. (Joke)', 'Menkveld', 2, '', 8),
 (179, ' B.W. (Ben)', 'Sintenie', 3, '', 8),
 (180, ' A.J.J. (André)', 'Bijlsma', 4, '', 8),
@@ -237,7 +237,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (189, ' A.H.M. (Lineke)', 'Kleemans', 13, '', 8),
 (190, ' R. (Ruud)', 'Maarschall', 14, '', 8),
 (191, ' R.P. (Ruud)', 'Bakker', 15, '', 8),
-(192, ' F.N.J. (Frans)', 'Jansen', 1, '', 9),
+(192, ' F.N.J. (Frans)', 'Jansen', 1, 'd66-fransjansen.jpg', 9),
 (193, ' M. (Margriet)', 'Struijf', 2, '', 9),
 (194, ' H. (Harry)', 'Vogel', 3, '', 9),
 (195, ' J.G. (Hans)', 'Horn', 4, '', 9),
@@ -251,7 +251,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (203, ' M.S. (Marijke)', 'Meijer-van den Broek', 12, '', 9),
 (204, ' P.H. (Paul)', 'de Winter', 13, '', 9),
 (205, ' N.A. (Nick)', 'Velt', 14, '', 9),
-(206, ' W.P. (Wim)', 'Rijnders', 1, '', 10),
+(206, ' W.P. (Wim)', 'Rijnders', 1, 'sp-wimrijnders.jpg', 10),
 (207, ' U.L.M. (Ursula)', 'Smit-Kiekebos', 2, '', 10),
 (208, ' G.L. (Leo)', 'van der Harst', 3, '', 10),
 (209, ' A.M.M. (Jeanne)', 'Pouw', 4, '', 10),
@@ -264,7 +264,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 (216, ' C.P. (Nel)', 'Loeve', 11, '', 10),
 (217, ' R.G. (Ronald)', 'Komen', 12, '', 10),
 (218, ' W.G. (Wilma)', 'Hoogeboom', 13, '', 10),
-(219, ' H.P. (Merieke)', 'Bredewold', 1, '', 11),
+(219, ' H.P. (Merieke)', 'Bredewold', 1, 'wens4u-meriekebredewold.jpg', 11),
 (220, ' J.H. (Jacqueline)', 'Freijsen-Vacano', 2, '', 11),
 (221, ' M.C. (Margreet)', 'Verloop', 3, '', 11),
 (222, ' L. (Linda)', 'Steijger', 4, '', 11),
