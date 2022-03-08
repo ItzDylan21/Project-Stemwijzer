@@ -3,6 +3,8 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
+    // Session file
+    require 'includes/session.inc.php';
 
         $muniName = $_GET['ID'];
         $sql2 = "SELECT * FROM municipality WHERE municipalityID = ?;";
@@ -48,7 +50,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='party-container'>
                 <a href='partymembers.php?ID=".$row['partyID']."'>
-                    <img src='media/parties/".$row['partylogo']."'>
+                    <img src='media/parties/".$row['partylogo']."'><br><span class='member-name'>
+                    ".$row['partyname']." </span>
                 </a></div>";
         }
     }

@@ -1,7 +1,8 @@
 <?php 
     // Connection file
     require_once "includes/config.php";   
-    // Header file  
+    // Session file
+    require 'includes/session.inc.php';
     $partydata = $_GET['ID'];
     $sql2 = "SELECT * FROM party WHERE partyID = ?;";
     $stmt = mysqli_stmt_init($conn);

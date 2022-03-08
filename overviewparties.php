@@ -3,6 +3,8 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
+    // Session file
+    require 'includes/session.inc.php';
 ?>
 <body>
 <div class="container-1">
@@ -33,7 +35,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='party-container'>
                 <a href='partydetails.php?ID=".$row['partyID']."'>
-                    <img src='media/parties/".$row['partylogo']."'>
+                    <img src='media/parties/".$row['partylogo']."'><br><span class='member-name'>
+                    ".$row['partyname']." </span>
                 </a></div>";
         }
     }

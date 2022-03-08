@@ -1,7 +1,8 @@
 <?php 
     // Connection file
     require_once "includes/config.php";   
-    // Header file  
+    // Session file
+    require 'includes/session.inc.php';
     $partydata = $_GET['ID'];
     $sql2 = "SELECT party.partyname, municipality.municipalityname FROM party INNER JOIN municipality ON
      party.municipalityID = municipality.municipalityID WHERE party.partyID = ?;";
@@ -17,13 +18,11 @@
         $title = $row['partyname'];
         $muniTitle = $row['municipalityname'];
     }
-
 ?>
 <!DOCTYPE html>
 <html>   
 <head>
     <title>
-        
         <?php
         // Shows the party name as title of the tab
             echo "$title";
@@ -49,7 +48,6 @@
     </div>
 </div>
 <div class="container-3">
-
 <?php
 
     echo "<div class='party-info-title text-center'>
@@ -60,7 +58,7 @@
     $data = $_GET['ID'];
     $sql2 = "SELECT * FROM member WHERE partyID = ?";
     $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt,$sql2)) {
+    if (!mysqli_stmt_prepare($stmt, $sql2)) {
         echo "SQL statement failed";
     } else{
         mysqli_stmt_bind_param($stmt, "s", $data );
@@ -72,9 +70,9 @@
             $lastName = $row['memberLastName'];
             
             echo "<div class='member-container'>
-                <a href='votesend.php?ID=".$row['partyID']."?member=".$row['memberID']."'>
+                <a href='votesend.php?ID=".$row['partyID']."&member=".$row['memberID']."'>
                     <img src='media/party-members/".$row['memberPicture']."'><br><span class='member-name'>
-                    ".$firstName."</span>" , "<span class= 'member-name'>".$lastName."</span>
+                    ".$firstName." </span>" , "<span class= 'member-name'>".$lastName."</span>
                 </a></div>";
         }
     }

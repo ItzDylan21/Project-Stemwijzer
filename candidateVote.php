@@ -3,6 +3,8 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
+    // Session file
+    require 'includes/session.inc.php';
 ?>
 
 <body>

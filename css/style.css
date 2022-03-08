@@ -131,6 +131,7 @@ html {
 
 .member-container {
   flex-basis: 30%;
+  flex: -moz-availiab;
   height: auto;
   padding-bottom: 16px;
   text-align: center;
@@ -205,6 +206,12 @@ html {
 .home-button {
   width: 700px;
   text-align: center;
+}
+.vote-button {
+  width: 200px;
+}
+.vote-form {
+  flex-direction: column;
 }
 /*Defines the style of the party leader picture div*/
 .partyleader-picture {
