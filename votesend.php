@@ -4,7 +4,7 @@
     // Session File
     require 'includes/session.inc.php';
     $partydata = $_GET['ID'];
-    $uniqueCode = $_POST['code']; //Moet je niet session code gebruiken? bijv: $_SESSION['code']
+    $uniqueCode = $_SESSION['code']; //Moet je niet session code gebruiken? bijv: $_SESSION['code'] 
     $memberID = $_GET['member'];
     $sql2 = "SELECT party.partyname, municipality.municipalityname FROM party INNER JOIN municipality ON
      party.municipalityID = municipality.municipalityID WHERE party.partyID = ?;";
@@ -22,51 +22,11 @@
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-    $sql3 = "SELECT codeID FROM code WHERE uniqueCode = ?";
-    $sql4 = "INSERT INTO vote (codeID, memberID) VALUES (?, ?)";
-    $sql5 = "UPDATE code SET codeUsed = ?, timeUsed = ? WHERE codeID = ?";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql3)) {
-        echo "SQL statement failed";
-    } else{
-        mysqli_stmt_bind_param($stmt, "s", $uniqueCode);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        $row = mysqli_fetch_assoc($result);
-        $codeID = $row['codeID'];
-        if (!mysqli_stmt_prepare($stmt, $sql4)) {
-            echo "SQL statement failed";
-        } else{
-            mysqli_stmt_bind_param($stmt, "ss", $param_codeID, $param_memberID);
-            // Set parameters
-            $param_codeID = $codeID;
-            $param_memberID = $memberID;
-            // Attempt to execute the prepared statement
-            mysqli_stmt_execute($stmt)
-            
-            {
-                // Redirect to thank you page
-                header("location: thanks.php");
-            }
-            else 
-            {
-                echo "Something went wrong. Please try again later.";
-            }
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
-    }
-    mysqli_close($conn);
-    };
 ?>
 <!DOCTYPE html>
 <html>   
 <head>
     <title>
-        
         <?php
         // Shows the party name as title of the tab
             echo "$muniTitle";
@@ -118,15 +78,12 @@
                     <img src='media/party-members/".$row['memberPicture']."'><br><span class='member-name'>
                     ".$firstName." </span>" , "<span class= 'member-name'>".$lastName."</span>
                 </a></div>";
+            echo  "<button class='vote-button'>
+                  <a href='processing.php?ID=".$partydata."&member=".$memberID."'>Stem</a>
+                  </button>";
         }
     }
 ?>
- <form class= vote-form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <p>U heeft deze selectie gemaakt!</p>
-            <div class="form-group">
-                <input type="submit" class="vote-button" value="STEM">
-            </div>
-</form>
 </div>
 </body>
 <?php 

@@ -8,6 +8,32 @@ html {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.scrollButton {
+  color: white;
+  position: fixed;
+  right: 2%;
+  bottom: 10%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  padding: 0;
+  margin: 0; 
+}
+.scrollButton2 {
+  color: white;
+  position: fixed;
+  right: 2%;
+  bottom: 18%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  padding: 0;
+  margin: 0; 
 }
 /*This styling is used for every button on the application*/
 button {
@@ -209,9 +235,6 @@ html {
 }
 .vote-button {
   width: 200px;
-}
-.vote-form {
-  flex-direction: column;
 }
 /*Defines the style of the party leader picture div*/
 .partyleader-picture {
