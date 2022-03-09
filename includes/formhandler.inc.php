@@ -17,12 +17,12 @@
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    header('Location: /partyVote.php?ID='.$row['municipalityID']);
+                    header('Location: ../partyVote.php?ID='.$row['municipalityID']);
                 }
             }
             //If the code does not exist the user gets send back to the validation page
             if (mysqli_num_rows($result) == 0) {
-                header('Location: /verification.php?error=codeincorrect');
+                header('Location: ../verification.php?error=codeincorrect');
 
                 /*
                 $codeUsedColumn = $row['usedAfterExpired'];
