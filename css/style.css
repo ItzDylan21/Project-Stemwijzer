@@ -204,7 +204,7 @@ a:active {
 }
 /*This is a child of grid-container, this also specifies the width and spacing for the logo*/
 .header-logo {
-  flex-basis: 35%;
+  flex-basis: 40%;
   font-weight: 600;
   text-align: center;
   padding: 2%;
@@ -212,7 +212,7 @@ a:active {
 }
 /*This is the styling for the (icon) button in the header*/
 .header-back {
-  flex-basis: 65%;
+  flex-basis: 60%;
   text-align: right;
   padding: 2%;
 }
