@@ -3,6 +3,12 @@
     require_once "includes/config.php";   
     // Session file
     require 'includes/session.inc.php';
+    // Check if ID exists
+    if(!isset($_GET['ID']))
+    {
+        header("location: municipalityselection.php");
+        exit;
+    }
     $partydata = $_GET['ID'];
     $sql2 = "SELECT * FROM party WHERE partyID = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -20,13 +26,12 @@
 <!DOCTYPE html>
 <html>   
 <head>
-    <title>
-        
-        <?php
-        // Shows the party name as title of the tab
-            echo "$title";
-        ?>
-    </title>
+        <title>
+            <?php
+            // Shows the party name as title of the tab
+                echo "$title";
+            ?>
+        </title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
@@ -80,7 +85,6 @@
         // and thus changes dynamically depending on the chosen party
         echo "<div class='party-info-title'><p>".$title."</p>","</div>";
 
-        $data =  $_GET['ID'];
         $sql2 = "SELECT * FROM party WHERE partyID = ?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt,$sql2)) {
@@ -95,8 +99,9 @@
             echo "<div class='party-info-text'>". $row['partyinfo']."</div>";
                 }
         }
-    
     ?>
 </div>
-</body>
-</html>
+<?php 
+    // Footer file
+    require 'includes/footer.inc.php';
+?>

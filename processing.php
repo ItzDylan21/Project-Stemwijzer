@@ -1,8 +1,14 @@
 <?php
  // Connection file
- require_once "includes/config.php";   
- // Session File
- require 'includes/session.inc.php';
+ require_once "includes/config.php";  
+ // Session file
+ require "includes/session.inc.php";
+ // Check if session has been started
+ if(!isset($_SESSION['code']))
+{
+    header("location: home.php");
+    exit;
+} 
     $partydata = $_GET['ID'];
     $uniqueCode = $_SESSION['code'];
     $memberID = $_GET['member'];
@@ -38,6 +44,7 @@
                     $param_codeID = $codeID;
                     if(mysqli_stmt_execute($stmt))
                     {
+                        session_destroy();
                         // Redirect to thank you page
                         header("location: thanks.php");
                     }

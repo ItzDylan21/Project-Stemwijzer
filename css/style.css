@@ -1,4 +1,4 @@
-/*This defines the margins/height of the application*/
+/*This defines the margins/height/font of the application*/
 .container-3,
 .container-2,
 body,
@@ -10,7 +10,7 @@ html {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     scroll-behavior: smooth;
 }
-
+/*This style is used for the up and down scrolling buttons*/
 .scrollButton {
   color: white;
   position: fixed;
@@ -27,13 +27,16 @@ html {
   color: white;
   position: fixed;
   right: 2%;
-  bottom: 18%;
+  bottom: 19%;
   width: 64px;
   height: 64px;
   border-radius: 50%;
   display: block;
   padding: 0;
   margin: 0; 
+}
+.scrollButton2 p {
+  margin: auto; 
 }
 /*This styling is used for every button on the application*/
 button {
@@ -78,7 +81,6 @@ a:active {
   color: inherit;
 }
 /*This is the styling for the main flex container which is used troughout the whole website*/
-
 .container-home {
   display: flex;
   flex-direction: column;
@@ -154,7 +156,7 @@ html {
   margin-top: 30%;
   font-weight: 400;
 }
-
+/*This defines the styling of member pictures container on the 'partymembers' page*/
 .member-container {
   flex-basis: 30%;
   flex: -moz-availiab;
@@ -162,8 +164,17 @@ html {
   padding-bottom: 16px;
   text-align: center;
 }
-
-.member-container img {
+/*Defines the styling and placement of the member-container on the votesend page*/
+.member-container-1 {
+  flex-basis: 100%;
+  flex: -moz-availiab;
+  height: auto;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+/*This defines the styling for the image in the member pictures container*/
+.member-container img, .member-container-1 img{
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -185,6 +196,7 @@ html {
   height: 100px;
   padding-bottom: 5px;
   padding-right: 5px;
+  padding-top: 16px;
   text-align: center;
 }
 /*This defines the styling and spacing for the municipality buttons*/
@@ -218,21 +230,24 @@ html {
 .blue-text {
   font-size: 50px;
 }
-
+/*Defines the placement of the home text on the home*/
 .home-text {
   margin: 10%;
 }
-
+/*Sets the gray color of the logo text*/
 .gray-text {
   color: #707070;
 }
+/*Sets the blue color of the logo text*/
 .blue-text {
   color: #38b2f9;
 }
+/*Defines the size and placement of the home button*/
 .home-button {
   width: 700px;
   text-align: center;
 }
+/*Defines the size of the vote-button on the homepage*/
 .vote-button {
   width: 200px;
 }
@@ -258,6 +273,7 @@ html {
   text-align: center;
   font-weight: 600;
 }
+/*Puts spacing between the 2 spans used for the logo, its done this way so we can change the logo easily*/
 .partyleader-name span {
   margin-right: 4px;
 }
@@ -271,31 +287,36 @@ html {
   background-size: 100% 3px;
   background-repeat: repeat-x;
   width: 50%;
+  margin-top: 16px;
 }
-
+/*Defines the styling and placement of the party info text on the partydetails page*/
 .party-info-text {
+  font-size: 20px;
   margin-top: 4%;
   flex-basis: 100%;
   padding: 16px;
-  text-align: start;
+  text-align: left;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin: 0;
 }
-
+/*Defines the placement of the h1*/
 h1 {
   margin-top: 64px;
   text-align: center;
 }
-
+/*Defines the placement of the 'back' button found in the header*/
 .return-home-button {
   text-align: center;
   margin-top: 32px;
 }
-
+/*Defines the styling and placement of the text on thanks page*/
 .timer-text {
   text-align: center;
   font-weight: 600;
   margin-top: 16px;
 }
-
+/*Defines the styling of the input where the user puts in the unique code on the verification page*/
 .code-input-style {
   color: #707070;
   text-align: center;
@@ -304,7 +325,6 @@ h1 {
   font-weight: 400;
   flex-basis: 100%;
 }
-
 input[type="text"] {
   padding: 10px;
   border: 0;
@@ -312,12 +332,13 @@ input[type="text"] {
   border-radius: 16px;
   text-align: center;
   width: 250px;
+  font-size: 24px;
 }
-
+/*Defines the placement of the code input*/
 .code-char-input {
   margin: 16px;
 }
-
+/*This defines the styling if the user puts in a non existing or already used code*/
 .code-error-message {
   text-align: center;
   margin: 24px;
@@ -325,15 +346,26 @@ input[type="text"] {
   font-size: 24px;
   color: #ed4337;
 }
-
+/*This defines the styling and placement of */
 .member-name {
   text-align: center;
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 64px;
 }
-
+/*This class allows you to center an element*/
 .text-center {
   text-align: center;
   flex-basis: 100%;
+}
+/*This class is for the footer styling*/
+.footer {
+  position: fixed;
+  padding: 10px 0px 0px 10px;
+  bottom: -16px;
+  width: 100%;
+  /* Height of the footer*/ 
+  height: 40px;
+  background: #ededed;
+  text-align: center;
 }

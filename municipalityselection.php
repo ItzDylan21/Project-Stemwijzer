@@ -6,7 +6,6 @@
     // Session file
     require 'includes/session.inc.php';
 ?>
-
 <body>
 <div class="container-1">
     <div class="header-logo">
@@ -25,12 +24,12 @@
 <?php
     /*This shows clickable images of all the parties in the municipality of the user*/ 
     $data = "municipalityID";
-    $sql2 = "SELECT * FROM municipality ORDER BY ?;";
+    $sql2 = "SELECT * FROM municipality ORDER BY ? ;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt,$sql2)) {
         echo "SQL statement failed";
     } else{
-        mysqli_stmt_bind_param($stmt, "s", $data );
+        mysqli_stmt_bind_param($stmt, "s", $data);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
@@ -45,8 +44,6 @@
 ?>
     </div>
 </div>
-</body>
-
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

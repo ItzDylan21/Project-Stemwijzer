@@ -2,7 +2,14 @@
     // Connection file
     require_once "includes/config.php";   
     // Session file
-    require 'includes/session.inc.php';
+    require "includes/session.inc.php";
+    // Check if session has been started
+    if(!isset($_SESSION['code']) || !isset($_GET['ID']))
+    {
+        session_destroy();
+        header("location: home.php");
+        exit;
+    }
     $partydata = $_GET['ID'];
     $sql2 = "SELECT party.partyname, municipality.municipalityname FROM party INNER JOIN municipality ON
      party.municipalityID = municipality.municipalityID WHERE party.partyID = ?;";
@@ -35,8 +42,8 @@
 </head>
 <body>
 <div class="top"></div>
-<button class="scrollButton2" id="scrollButtoonclick=" onclick="location.href='#top';"><a href="#top">&#8593;</a></button>
-<button class="scrollButton" id="scrollButtoonclick=" onclick="location.href='#bottom';"><a href="#bottom">&#8595;</a></button>
+<button class="scrollButton2" id="scrollButtoonclick=" onclick="scrollWin2()"><p>&#9650;</p></button>
+<button class="scrollButton" id="scrollButtoonclick=" onclick="scrollWin()"><p>&#9660;</p></button>
 <div class="container-1">
     <div class="header-logo">
          <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
@@ -83,7 +90,14 @@
     }
 ?>
 </div>
-<div name ="bottom" id="bottom" class="bottom"></div>
+<script>
+function scrollWin() {
+  window.scrollBy(0, 1200);
+}
+function scrollWin2() {
+  window.scrollBy(0, -1200);
+}
+</script>
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

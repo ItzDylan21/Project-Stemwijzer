@@ -1,10 +1,17 @@
 <?php 
     // Connection file
-    require_once "includes/config.php";   
+    require_once "includes/config.php";  
     // Session File
     require 'includes/session.inc.php';
+    // Check if session has been started
+    if(!isset($_SESSION['code']) || !isset($_GET['ID']) || !isset($_GET['member']))
+    {
+        session_destroy();
+        header("location: home.php");
+        exit;
+    } 
     $partydata = $_GET['ID'];
-    $uniqueCode = $_SESSION['code']; //Moet je niet session code gebruiken? bijv: $_SESSION['code'] 
+    $uniqueCode = $_SESSION['code'];
     $memberID = $_GET['member'];
     $sql2 = "SELECT party.partyname, municipality.municipalityname FROM party INNER JOIN municipality ON
      party.municipalityID = municipality.municipalityID WHERE party.partyID = ?;";
@@ -52,10 +59,9 @@
     </div>
 </div>
 <div class="container-3">
-
 <?php
     echo "<div class='party-info-title text-center'>
-    <p> Uw stem op $title</p>
+    <p> Uw stemt op $title</p>
     </div>";
     /*This shows clickable images of all the parties in the municipality of the user*/ 
     $data = $_GET['ID'];
@@ -73,19 +79,18 @@
             $firstName = $row['memberFirstName'];
             $lastName = $row['memberLastName'];
             
-            echo "<div class='member-container'>
-                <a href='votesend.php?ID=".$row['partyID']."?member=".$row['memberID']."'>
-                    <img src='media/party-members/".$row['memberPicture']."'><br><span class='member-name'>
+            echo "<div class='member-container-1'>
+                <img src='media/party-members/".$row['memberPicture']."'><br><span class='member-name'>
                     ".$firstName." </span>" , "<span class= 'member-name'>".$lastName."</span>
-                </a></div>";
-            echo  "<button class='vote-button'>
-                  <a href='processing.php?ID=".$partydata."&member=".$memberID."'>Stem</a>
-                  </button>";
+                </div class='text-center'>";
+            echo  "<form action='processing.php?ID=".$partydata."&member=".$memberID."' name='formVote' method='post'>
+                  <button class='vote-button' type='submit'>Stem</button>
+                  </form>";
+                  
         }
     }
 ?>
 </div>
-</body>
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

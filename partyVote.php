@@ -5,7 +5,13 @@
     require 'includes/header.inc.php';
     // Session file
     require 'includes/session.inc.php';
-
+    // Check if session has been started
+    if(!isset($_SESSION['code']) || !isset($_GET['ID']))
+    {
+        session_destroy();
+        header("location: home.php");
+        exit;
+    }
         $muniName = $_GET['ID'];
         $sql2 = "SELECT * FROM municipality WHERE municipalityID = ?;";
         $stmt = mysqli_stmt_init($conn);
@@ -35,6 +41,9 @@
     </div>
 </div>
 <div class="container-3">
+    <div class="party-info-title text-center">
+        <p>Kies hier de partij waar u op wilt stemmen.</p>
+    </div>
 <?php
     /*This shows clickable images of all the parties in the municipality of the user*/ 
     $data = $_GET['ID'];

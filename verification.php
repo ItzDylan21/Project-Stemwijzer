@@ -3,8 +3,6 @@
     require_once "includes/config.php";   
     // Header file  
     require 'includes/header.inc.php';
-    // Session file
-    require 'includes/session.inc.php';
 ?>
 <html>
 <body>
@@ -38,7 +36,7 @@
         Vul uw verificatiecode hier in 
         <br>
         <!--Form field that accepts text, has a minimum amount of characters, a placeholder and other fun stuff -->
-        <input type="text" class="code-char-input" name="verifCode" size="16" minlength="8" placeholder="type code hier" 
+        <input type="text" class="code-char-input" name="verifCode" size="16" minlength="8" placeholder="Type code hier" 
         autocomplete="off" required autofocus>
         <br>
 
@@ -59,7 +57,6 @@
     ?>
 </div>
 </div>
-</body>
 <?php 
     require "includes/footer.inc.php"
 ?>

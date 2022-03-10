@@ -5,6 +5,12 @@
     require 'includes/header.inc.php';
     // Session file
     require 'includes/session.inc.php';
+    // Check if session has been started
+    if(!isset($_GET['ID']))
+    {
+        header("location: municipalityselection.php");
+        exit;
+    }
 ?>
 <body>
 <div class="container-1">
@@ -42,7 +48,6 @@
     }
 ?>
 </div>
-</body>
 <?php 
     // Footer file
     require 'includes/footer.inc.php';

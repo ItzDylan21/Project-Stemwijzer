@@ -1,9 +1,7 @@
 <?php
     // Connection file
     require_once "config.php";
-    // Session File
-    require 'session.inc.php';
-        //Vars to be used
+       //Vars to be used
         $verifCode = $_POST['verifCode'];
         $codeUsed = "0";
         //This query checks if the code exists in the database or not
@@ -20,10 +18,11 @@
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_assoc($result)) {
+                    require 'session.inc.php';
                     header('Location: ../partyvote.php?ID='.$row['municipalityID']);
                 }
             }
-            //If the code does not exist the user gets send back to the validation page
+            //If the code has already been used and is expired the user gets send back to the validation page
             if (mysqli_num_rows($result) == 0) {                
                 $sql1 = "UPDATE code SET usedAfterExpired = usedAfterExpired +1 WHERE uniqueCode = '$verifCode'";
                 mysqli_query($conn, $sql1);
