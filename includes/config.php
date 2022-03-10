@@ -9,4 +9,5 @@
 	if($conn == false) {
 		die("COULD NOT CONNECT. " .mysqli_connect_error());
 	}
+	//test comment
 ?>
