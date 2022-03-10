@@ -27,7 +27,7 @@
                 }
                     else { 
                         //Deze alert message aanpassen???
-                        alert('Uw code is incorrect.');
+                        alert('Uw code is incorrect of al gebruikt.');
                         return false;
                     }
         }

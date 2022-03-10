@@ -65,7 +65,7 @@ button:focus {
 }
 
 button:focus {
-  outline: 1px solid #fff;
+  /*outline: 1px solid #fff;*/
   outline-offset: -4px;
 }
 
@@ -89,7 +89,7 @@ a:active {
   justify-content: space-around;
   flex-basis: 100%;
 }
-/*This is the styling for the flex container that is used for the headers troughout the whole website*/
+/*This is the styling for the flex container that is used for the headers throughout the whole website*/
 .container-1 {
   display: flex;
   flex-basis: 100%;
@@ -141,13 +141,7 @@ a:active {
   height: auto;
   text-align: center;
 }
-/*This is the border styling which runs troughout the whole website*/
-.container-1,
-html {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #a1a1a1;
-}
+
 /*This is the styling for the 404 page*/
 .error-style {
   color: #707070;
@@ -214,7 +208,7 @@ html {
   font-weight: 600;
   text-align: center;
   padding: 2%;
-  border-right: 1px solid #a1a1a1;
+  /* border-right: 1px solid #a1a1a1; */
 }
 /*This is the styling for the (icon) button in the header*/
 .header-back {
@@ -368,4 +362,5 @@ input[type="text"] {
   height: 40px;
   background: #ededed;
   text-align: center;
+  color: #707070;
 }
