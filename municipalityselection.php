@@ -23,13 +23,11 @@
     <div class="box-mun-button">
 <?php
     /*This shows clickable images of all the parties in the municipality of the user*/ 
-    $data = "municipalityID";
-    $sql2 = "SELECT * FROM municipality ORDER BY ? ;";
+    $sql2 = "SELECT * FROM municipality";
     $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt,$sql2)) {
+    if (!mysqli_stmt_prepare($stmt, $sql2)) {
         echo "SQL statement failed";
     } else{
-        mysqli_stmt_bind_param($stmt, "s", $data);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
