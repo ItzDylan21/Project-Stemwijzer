@@ -6,6 +6,7 @@
  // Check if session has been started
  if(!isset($_SESSION['code']))
 {
+    session_destroy();
     header("location: home.php");
     exit;
 } 
