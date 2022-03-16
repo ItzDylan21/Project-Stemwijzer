@@ -1,0 +1,3 @@
+1. SELECT COUNT(*) FROM 'vote'
+2. SELECT COUNT(*) FROM 'vote' WHERE memberID = <Vul id in>
+3. SELECT COUNT(*) AS aantal, party.partyname FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID
