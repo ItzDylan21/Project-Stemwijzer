@@ -1,3 +1,6 @@
 1. SELECT COUNT(*) FROM 'vote'
 2. SELECT COUNT(*) FROM 'vote' WHERE memberID = <Vul id in>
-3. SELECT COUNT(*) AS aantal, party.partyname FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID
+3. SELECT COUNT(*) AS aantalStemmen, party.partyname FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY aantalStemmen DESC 
+4. SELECT COUNT(*) / 29 FROM `vote`
+5. SELECT FLOOR(COUNT(*) / 1.9655) AS heleZetels, party.partyname AS partyName FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY `heleZetels` DESC 
+6. 
