@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Gegenereerd op: 16 mrt 2022 om 16:37
--- Serverversie: 8.0.25
--- PHP-versie: 8.0.7
+-- Host: 127.0.0.1
+-- Generation Time: Mar 17, 2022 at 03:46 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,57 +24,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `code`
+-- Table structure for table `code`
 --
 
 CREATE TABLE `code` (
-  `codeID` int NOT NULL,
-  `timeCreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `uniqueCode` varchar(32) NOT NULL,
-  `codeUsed` tinyint(1) NOT NULL DEFAULT '0',
+  `codeID` int(11) NOT NULL,
+  `timeCreated` datetime NOT NULL DEFAULT current_timestamp(),
+  `uniqueCode` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codeUsed` tinyint(1) NOT NULL DEFAULT 0,
   `timeUsed` datetime DEFAULT NULL,
-  `usedAfterExpired` int NOT NULL DEFAULT '0',
-  `municipalityID` int NOT NULL
+  `usedAfterExpired` int(11) NOT NULL DEFAULT 0,
+  `municipalityID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `code`
+-- Dumping data for table `code`
 --
 
 INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`, `municipalityID`) VALUES
 (11, '2022-03-10 11:10:02', 'hNK5ckid', 1, '2022-03-15 15:24:36', 0, 3),
-(12, '2022-03-10 11:10:02', 'fLH5SoKA', 0, NULL, 0, 3),
+(12, '2022-03-10 11:10:02', 'fLH5SoKA', 1, '2022-03-16 16:46:50', 0, 3),
 (13, '2022-03-10 11:10:02', 'ubtmzAGs', 1, '2022-03-16 16:06:40', 0, 3),
 (14, '2022-03-10 11:10:02', 'HuWyeMeH', 0, NULL, 0, 3),
-(15, '2022-03-10 11:10:02', 'uG7Jj8Xw', 0, NULL, 0, 3),
+(15, '2022-03-10 11:10:02', 'uG7Jj8Xw', 1, '2022-03-16 16:47:41', 0, 3),
 (16, '2022-03-10 11:10:02', '88q7hBjX', 0, NULL, 0, 3),
 (17, '2022-03-10 11:10:02', 'L98SWXkL', 0, NULL, 0, 3),
 (18, '2022-03-10 11:10:02', 'wqGsAuhg', 1, '2022-03-15 18:25:53', 0, 3),
 (19, '2022-03-10 11:10:02', 'MjseP5eM', 1, '2022-03-15 18:14:51', 0, 3),
 (20, '2022-03-10 11:10:02', 'wcK7ixxo', 0, NULL, 0, 3),
 (21, '2022-03-10 11:10:02', 'SxunQNPv', 0, NULL, 0, 3),
-(22, '2022-03-10 11:10:02', 'yFaUV4P4', 0, NULL, 0, 3),
+(22, '2022-03-10 11:10:02', 'yFaUV4P4', 1, '2022-03-16 21:04:19', 0, 3),
 (23, '2022-03-10 11:10:02', 'Q379dYQR', 0, NULL, 0, 3),
-(24, '2022-03-10 11:10:02', '4866cSJW', 0, NULL, 0, 3),
+(24, '2022-03-10 11:10:02', '4866cSJW', 1, '2022-03-16 17:00:35', 0, 3),
 (25, '2022-03-10 11:10:02', 'HbgC5Lg3', 0, NULL, 0, 3),
 (26, '2022-03-10 11:10:02', 'gnxLdLcj', 0, NULL, 0, 3),
 (27, '2022-03-10 11:10:02', 'dVwWVb6h', 0, NULL, 0, 3),
 (28, '2022-03-10 11:10:02', 'z98qJd4j', 0, NULL, 0, 3),
 (29, '2022-03-10 11:10:02', 'zCy65gn2', 0, NULL, 0, 3),
-(30, '2022-03-10 11:10:02', 'BBKeHsmK', 0, NULL, 0, 3),
+(30, '2022-03-10 11:10:02', 'BBKeHsmK', 1, '2022-03-16 16:59:35', 0, 3),
 (31, '2022-03-10 11:10:02', 'pyoemmTa', 1, '2022-03-15 18:18:58', 0, 3),
 (32, '2022-03-10 11:10:02', 'kEzi4b6T', 0, NULL, 0, 3),
 (33, '2022-03-10 11:10:02', 'nekq9Kgg', 0, NULL, 0, 3),
 (34, '2022-03-10 11:10:02', 'YmN6GSzM', 0, NULL, 0, 3),
 (35, '2022-03-10 11:10:02', 'dJsntfkD', 1, '2022-03-16 16:04:46', 0, 3),
 (36, '2022-03-10 11:10:02', 'tEzpLUt8', 0, NULL, 0, 3),
-(37, '2022-03-10 11:10:02', '97cN9o5x', 0, NULL, 0, 3),
+(37, '2022-03-10 11:10:02', '97cN9o5x', 1, '2022-03-16 20:33:17', 0, 3),
 (38, '2022-03-10 11:10:02', 'jjsLTHP3', 1, '2022-03-15 18:20:18', 0, 3),
 (39, '2022-03-10 11:10:02', 'xEaynmKL', 0, NULL, 0, 3),
 (40, '2022-03-10 11:10:02', 'YNMhohHE', 1, '2022-03-15 18:19:50', 0, 3),
 (41, '2022-03-10 11:10:02', 'hdcL9VY4', 1, '2022-03-15 18:34:24', 0, 3),
-(42, '2022-03-10 11:10:02', 'zFmxvLg5', 0, NULL, 0, 3),
-(43, '2022-03-10 11:10:02', 'wgeXDGti', 0, NULL, 0, 3),
+(42, '2022-03-10 11:10:02', 'zFmxvLg5', 1, '2022-03-16 21:05:38', 0, 3),
+(43, '2022-03-10 11:10:02', 'wgeXDGti', 1, '2022-03-16 18:17:58', 0, 3),
 (44, '2022-03-10 11:10:02', 'tSEVNHWv', 0, NULL, 0, 3),
 (45, '2022-03-10 11:10:02', 'eyxnMRGc', 0, NULL, 0, 3),
 (46, '2022-03-10 11:10:02', 'ENjztwDf', 0, NULL, 0, 3),
@@ -87,27 +87,27 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (53, '2022-03-10 11:10:02', 'wa9o8Khr', 0, NULL, 0, 3),
 (54, '2022-03-10 11:10:02', '7WMzjJrA', 0, NULL, 0, 3),
 (55, '2022-03-10 11:10:02', 'Y86krWyX', 1, '2022-03-16 15:58:29', 0, 3),
-(56, '2022-03-10 11:10:02', 'CbGV7aWy', 0, NULL, 0, 3),
+(56, '2022-03-10 11:10:02', 'CbGV7aWy', 1, '2022-03-16 18:16:19', 0, 3),
 (57, '2022-03-10 11:10:02', 'Ay8j2Nho', 0, NULL, 0, 3),
 (58, '2022-03-10 11:10:02', '68FPieqv', 0, NULL, 0, 3),
 (59, '2022-03-10 11:10:02', 'K8ZBj4sF', 0, NULL, 0, 3),
 (60, '2022-03-10 11:10:02', 'knGvU6nf', 0, NULL, 0, 3),
 (61, '2022-03-10 11:10:02', 'bqLbSRdW', 0, NULL, 0, 3),
 (62, '2022-03-10 11:10:02', 'EQGseUHm', 0, NULL, 0, 3),
-(63, '2022-03-10 11:10:02', 'M2WcPjXN', 0, NULL, 0, 3),
+(63, '2022-03-10 11:10:02', 'M2WcPjXN', 1, '2022-03-16 18:08:21', 0, 3),
 (64, '2022-03-10 11:10:02', 'xbQj67sH', 0, NULL, 0, 3),
 (65, '2022-03-10 11:10:02', 'VFyfMpho', 0, NULL, 0, 3),
 (66, '2022-03-10 11:10:02', 'TD2N3i2b', 0, NULL, 0, 3),
 (67, '2022-03-10 11:10:02', '2y4Yiyv5', 0, NULL, 0, 3),
 (68, '2022-03-10 11:10:02', 'puuiAUfq', 0, NULL, 0, 3),
-(69, '2022-03-10 11:10:02', '976bvyaU', 0, NULL, 0, 3),
-(70, '2022-03-10 11:10:02', '3NaMCwDB', 0, NULL, 0, 3),
+(69, '2022-03-10 11:10:02', '976bvyaU', 1, '2022-03-16 18:15:46', 0, 3),
+(70, '2022-03-10 11:10:02', '3NaMCwDB', 1, '2022-03-16 20:04:08', 0, 3),
 (71, '2022-03-10 11:10:02', 'ngsxeUtN', 0, NULL, 0, 3),
 (72, '2022-03-10 11:10:02', 'k6T52aVU', 0, NULL, 0, 3),
 (73, '2022-03-10 11:10:02', 'qNV7FmvV', 0, NULL, 0, 3),
 (74, '2022-03-10 11:10:02', 'X5U9zNNF', 0, NULL, 0, 3),
 (75, '2022-03-10 11:10:02', '3e8BVmrP', 0, NULL, 0, 3),
-(76, '2022-03-10 11:10:02', 'Y5yj8Tf7', 0, NULL, 0, 3),
+(76, '2022-03-10 11:10:02', 'Y5yj8Tf7', 1, '2022-03-16 20:01:38', 0, 3),
 (77, '2022-03-10 11:10:02', 'jV8AmXt2', 0, NULL, 0, 3),
 (78, '2022-03-10 11:10:02', 'zXLStB7M', 0, NULL, 0, 3),
 (79, '2022-03-10 11:10:02', '65gdzBCn', 0, NULL, 0, 3),
@@ -122,7 +122,7 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (88, '2022-03-10 11:10:02', 'qPgYuwCy', 0, NULL, 0, 3),
 (89, '2022-03-10 11:10:02', '2assvY9h', 0, NULL, 0, 3),
 (90, '2022-03-10 11:10:02', '4pbbpMQ4', 1, '2022-03-15 18:40:45', 0, 3),
-(91, '2022-03-10 11:10:02', 'JWv2xBdg', 0, NULL, 0, 3),
+(91, '2022-03-10 11:10:02', 'JWv2xBdg', 1, '2022-03-16 20:40:33', 0, 3),
 (92, '2022-03-10 11:10:02', 'HkAZD8D3', 0, NULL, 0, 3),
 (93, '2022-03-10 11:10:02', 'rdtTm3VZ', 0, NULL, 0, 3),
 (94, '2022-03-10 11:10:02', 'RwmHrasQ', 0, NULL, 0, 3),
@@ -143,39 +143,39 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (109, '2022-03-10 11:10:02', 'KoYjtbrf', 0, NULL, 0, 3),
 (110, '2022-03-10 11:10:02', 'es5cjEYJ', 0, NULL, 0, 3),
 (111, '2022-03-10 11:10:02', 'ewiD6DHg', 0, NULL, 0, 3),
-(112, '2022-03-10 11:10:02', 'HbZthnxd', 0, NULL, 0, 3),
+(112, '2022-03-10 11:10:02', 'HbZthnxd', 1, '2022-03-16 20:42:29', 2, 3),
 (113, '2022-03-10 11:10:02', 'QKRkZJCE', 1, '2022-03-15 18:33:31', 0, 3),
 (114, '2022-03-10 11:10:02', '5ehfJNYK', 0, NULL, 0, 3),
-(115, '2022-03-10 11:10:02', 'hTdB6s42', 0, NULL, 0, 3),
-(116, '2022-03-10 11:10:02', 'RWNxncVL', 0, NULL, 0, 3),
+(115, '2022-03-10 11:10:02', 'hTdB6s42', 1, '2022-03-16 20:49:28', 1, 3),
+(116, '2022-03-10 11:10:02', 'RWNxncVL', 1, '2022-03-16 17:58:27', 0, 3),
 (117, '2022-03-10 11:10:02', 'ThxB7hgg', 1, '2022-03-15 18:09:53', 0, 3),
-(118, '2022-03-10 11:10:02', 'kfJegndH', 0, NULL, 0, 3),
+(118, '2022-03-10 11:10:02', 'kfJegndH', 1, '2022-03-16 20:02:50', 0, 3),
 (119, '2022-03-10 11:10:02', 's9Wg3wWJ', 0, NULL, 0, 3),
 (120, '2022-03-10 11:10:02', 'crQerw7b', 0, NULL, 0, 3),
 (121, '2022-03-10 11:10:02', '3u9yZEpo', 0, NULL, 0, 3),
 (122, '2022-03-10 11:10:02', 'bFutPqd7', 1, '2022-03-15 18:13:53', 0, 3),
-(123, '2022-03-10 11:10:02', 'Rjanz8YF', 0, NULL, 0, 3),
+(123, '2022-03-10 11:10:02', 'Rjanz8YF', 1, '2022-03-16 17:52:38', 0, 3),
 (124, '2022-03-10 11:10:02', 'RoaJjdEF', 0, NULL, 0, 3),
-(125, '2022-03-10 11:10:02', 'yaTdhwTS', 0, NULL, 0, 3),
+(125, '2022-03-10 11:10:02', 'yaTdhwTS', 1, '2022-03-16 17:57:30', 0, 3),
 (126, '2022-03-10 11:10:02', 'iU8CfGJ4', 1, '2022-03-16 16:07:38', 0, 3),
 (127, '2022-03-10 11:10:02', 'GrPcnJi8', 0, NULL, 0, 3),
 (128, '2022-03-10 11:10:02', 'YZnA8Mht', 0, NULL, 0, 3),
 (129, '2022-03-10 11:10:02', 'LJBPB7tU', 1, '2022-03-15 18:44:21', 0, 3),
-(130, '2022-03-10 11:10:02', 'qHY7y6FT', 0, NULL, 0, 3),
+(130, '2022-03-10 11:10:02', 'qHY7y6FT', 1, '2022-03-16 17:51:25', 1, 3),
 (131, '2022-03-10 11:10:02', 'prGaiECb', 1, '2022-03-15 17:22:29', 0, 3),
-(132, '2022-03-10 11:10:02', 'JaMMKuQM', 0, NULL, 0, 3),
+(132, '2022-03-10 11:10:02', 'JaMMKuQM', 1, '2022-03-16 18:17:19', 0, 3),
 (133, '2022-03-10 11:10:02', '3vgmm58E', 1, '2022-03-16 15:57:57', 0, 3),
 (134, '2022-03-10 11:10:02', 'B4ixkGkK', 1, '2022-03-15 18:46:19', 0, 3),
 (135, '2022-03-10 11:10:02', 'ZyPbP52M', 0, NULL, 0, 3),
 (136, '2022-03-10 11:10:02', 'oyJJLV6x', 0, NULL, 0, 3),
-(137, '2022-03-10 11:10:02', 'xA5cmEnB', 0, NULL, 0, 3),
+(137, '2022-03-10 11:10:02', 'xA5cmEnB', 1, '2022-03-16 18:00:38', 0, 3),
 (138, '2022-03-10 11:10:02', 'EeqPJpMe', 0, NULL, 0, 3),
 (139, '2022-03-10 11:10:02', 'DkXVw6Vs', 0, NULL, 0, 3),
-(140, '2022-03-10 11:10:02', 'mj8BjTdM', 0, NULL, 0, 3),
+(140, '2022-03-10 11:10:02', 'mj8BjTdM', 1, '2022-03-16 17:12:57', 0, 3),
 (141, '2022-03-10 11:10:02', '5mEKdnGj', 0, NULL, 0, 3),
 (142, '2022-03-10 11:10:02', 'ZK2kR95W', 1, '2022-03-14 22:37:04', 0, 3),
 (143, '2022-03-10 11:10:02', 'STqsfX4s', 1, '2022-03-15 18:08:41', 0, 3),
-(144, '2022-03-10 11:10:02', 'HizwJyzV', 1, '2022-03-16 16:03:39', 0, 3),
+(144, '2022-03-10 11:10:02', 'HizwJyzV', 1, '2022-03-16 16:03:39', 1, 3),
 (145, '2022-03-10 11:10:02', 'szvZ7TFq', 1, '2022-03-15 18:09:23', 0, 3),
 (146, '2022-03-10 11:10:02', 'qHrLe5cq', 1, '2022-03-15 15:32:21', 0, 3),
 (147, '2022-03-10 11:10:02', 'Vnd8o9zT', 0, NULL, 0, 3),
@@ -558,91 +558,91 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (524, '2022-03-10 11:10:02', 'gBh9mmN4', 0, NULL, 0, 3),
 (525, '2022-03-10 11:10:02', 'Y2FHce5d', 0, NULL, 0, 3),
 (526, '2022-03-10 11:10:02', 'Mwkn5LEL', 0, NULL, 0, 3),
-(527, '2022-03-10 11:10:02', 'c2m4nk7T', 1, '2022-03-15 18:35:41', 0, 3),
-(528, '2022-03-10 11:10:02', '5eZKKc29', 0, NULL, 0, 3),
+(527, '2022-03-10 11:10:02', 'c2m4nk7T', 1, '2022-03-15 18:35:41', 2, 3),
+(528, '2022-03-10 11:10:02', '5eZKKc29', 1, '2022-03-16 17:59:31', 0, 3),
 (529, '2022-03-10 11:10:02', 'mvXswipt', 0, NULL, 0, 3),
 (530, '2022-03-10 11:10:02', 'DqgLt4we', 0, NULL, 0, 3),
 (531, '2022-03-10 11:10:02', 'rtSBGa9R', 0, NULL, 0, 3),
 (532, '2022-03-10 11:10:02', '2FbNmLPT', 0, NULL, 0, 3),
-(533, '2022-03-10 11:10:02', 'Azz9BhXS', 0, NULL, 0, 3),
+(533, '2022-03-10 11:10:02', 'Azz9BhXS', 1, '2022-03-16 17:32:54', 0, 3),
 (534, '2022-03-10 11:10:02', 'vQzsRHnw', 0, NULL, 0, 3),
-(535, '2022-03-10 11:10:02', 'uwxVnYsn', 0, NULL, 0, 3),
+(535, '2022-03-10 11:10:02', 'uwxVnYsn', 1, '2022-03-16 20:31:27', 0, 3),
 (536, '2022-03-10 11:10:02', 'MCJH2unN', 0, NULL, 0, 3),
 (537, '2022-03-10 11:10:02', 'U9kL43yn', 0, NULL, 0, 3),
 (538, '2022-03-10 11:10:02', 'bFuRqLGj', 0, NULL, 0, 3),
 (539, '2022-03-10 11:10:02', 'y5C6S4Xt', 0, NULL, 0, 3),
-(540, '2022-03-10 11:10:02', 'EdZaaVnF', 0, NULL, 0, 3),
+(540, '2022-03-10 11:10:02', 'EdZaaVnF', 1, '2022-03-16 18:18:50', 0, 3),
 (541, '2022-03-10 11:10:02', 'ujKNvwSH', 1, '2022-03-16 16:02:08', 0, 3),
 (542, '2022-03-10 11:10:02', 'gFVSP9g9', 0, NULL, 0, 3),
 (543, '2022-03-10 11:10:02', '5AerArJu', 0, NULL, 0, 3),
-(544, '2022-03-10 11:10:02', 'WcMneoSJ', 0, NULL, 0, 3),
+(544, '2022-03-10 11:10:02', 'WcMneoSJ', 1, '2022-03-16 21:11:55', 0, 3),
 (545, '2022-03-10 11:10:02', 'Dq8yGWjg', 0, NULL, 0, 3),
-(546, '2022-03-10 11:10:02', 'vqJ8UU5T', 0, NULL, 0, 3),
+(546, '2022-03-10 11:10:02', 'vqJ8UU5T', 1, '2022-03-16 20:51:18', 1, 3),
 (547, '2022-03-10 11:10:02', 'gHDCMAQ3', 1, '2022-03-15 18:12:40', 0, 3),
 (548, '2022-03-10 11:10:02', 'DyaX9NW5', 1, '2022-03-16 16:00:22', 0, 3),
 (549, '2022-03-10 11:10:02', 'XkeyuKTX', 0, NULL, 0, 3),
 (550, '2022-03-10 11:10:02', 'WRKZJDVf', 0, NULL, 0, 3),
 (551, '2022-03-10 11:10:02', 'iGgqxHDk', 0, NULL, 0, 3),
-(552, '2022-03-10 11:10:02', 'tPrnxNDs', 0, NULL, 0, 3),
-(553, '2022-03-10 11:10:02', 'iLugM4vG', 0, NULL, 0, 3),
+(552, '2022-03-10 11:10:02', 'tPrnxNDs', 1, '2022-03-16 20:39:36', 0, 3),
+(553, '2022-03-10 11:10:02', 'iLugM4vG', 1, '2022-03-16 20:55:28', 0, 3),
 (554, '2022-03-10 11:10:02', 'RV5g3mvt', 1, '2022-03-15 18:13:13', 0, 3),
 (555, '2022-03-10 11:10:02', '3FeZUUAH', 1, '2022-03-16 15:59:24', 0, 3),
 (556, '2022-03-10 11:10:02', 'cRWeH6GF', 0, NULL, 0, 3),
 (557, '2022-03-10 11:10:02', 'Z3245aec', 0, NULL, 0, 3),
 (558, '2022-03-10 11:10:02', 'mpfFaUYE', 0, NULL, 0, 3),
-(559, '2022-03-10 11:10:02', 'q7HueRjA', 0, NULL, 0, 3),
-(560, '2022-03-10 11:10:02', 'fKkWcgYK', 0, NULL, 0, 3),
+(559, '2022-03-10 11:10:02', 'q7HueRjA', 1, '2022-03-16 20:17:47', 0, 3),
+(560, '2022-03-10 11:10:02', 'fKkWcgYK', 1, '2022-03-16 23:18:16', 0, 3),
 (561, '2022-03-10 11:10:02', 'gX7ppYGg', 1, '2022-03-15 18:23:30', 0, 3),
 (562, '2022-03-10 11:10:02', 'KnXGvg55', 1, '2022-03-16 16:02:54', 0, 3),
 (563, '2022-03-10 11:10:02', 'MpKQUJM4', 0, NULL, 0, 3),
 (564, '2022-03-10 11:10:02', 'i66fUDzs', 0, NULL, 0, 3),
 (565, '2022-03-10 11:10:02', 'isDE7q8b', 0, NULL, 0, 3),
-(566, '2022-03-10 11:10:02', 'LVDRkUSg', 0, NULL, 0, 3),
-(567, '2022-03-10 11:10:02', 'ie8zi6dw', 0, NULL, 0, 3),
+(566, '2022-03-10 11:10:02', 'LVDRkUSg', 1, '2022-03-16 20:32:45', 0, 3),
+(567, '2022-03-10 11:10:02', 'ie8zi6dw', 1, '2022-03-16 21:03:41', 0, 3),
 (568, '2022-03-10 11:10:02', 'rR6jsor8', 1, '2022-03-15 18:18:14', 0, 3),
-(569, '2022-03-10 11:10:02', 'MwXPaHCH', 0, NULL, 0, 3),
+(569, '2022-03-10 11:10:02', 'MwXPaHCH', 1, '2022-03-16 18:06:44', 0, 3),
 (570, '2022-03-10 11:10:02', 'gRsvfv36', 0, NULL, 0, 3),
 (571, '2022-03-10 11:10:02', 'AUBddN9U', 0, NULL, 0, 3),
 (572, '2022-03-10 11:10:02', 'uxeBuzsT', 0, NULL, 0, 3),
-(573, '2022-03-10 11:10:02', '5GwSf9YK', 0, NULL, 0, 3),
-(574, '2022-03-10 11:10:02', 'uAac2vKs', 0, NULL, 0, 3),
+(573, '2022-03-10 11:10:02', '5GwSf9YK', 1, '2022-03-16 20:38:30', 0, 3),
+(574, '2022-03-10 11:10:02', 'uAac2vKs', 1, '2022-03-16 21:36:47', 0, 3),
 (575, '2022-03-10 11:10:02', '8ykrXbqj', 0, NULL, 0, 3),
-(576, '2022-03-10 11:10:02', 'fM2Ms9Va', 0, NULL, 0, 3),
+(576, '2022-03-10 11:10:02', 'fM2Ms9Va', 1, '2022-03-16 18:10:14', 1, 3),
 (577, '2022-03-10 11:10:02', 'buEe3few', 0, NULL, 0, 3),
 (578, '2022-03-10 11:10:02', 'iqWnQ4Dx', 0, NULL, 0, 3),
 (579, '2022-03-10 11:10:02', 'BdHen5BT', 0, NULL, 0, 3),
-(580, '2022-03-10 11:10:02', 'HZ8dJAbz', 0, NULL, 0, 3),
+(580, '2022-03-10 11:10:02', 'HZ8dJAbz', 1, '2022-03-16 20:32:14', 0, 3),
 (581, '2022-03-10 11:10:02', 'opHZ6G6G', 0, NULL, 0, 3),
 (582, '2022-03-10 11:10:02', 'rM3Mvhn8', 1, '2022-03-15 18:24:01', 2, 3),
-(583, '2022-03-10 11:10:02', 'StDxM42A', 0, NULL, 0, 3),
+(583, '2022-03-10 11:10:02', 'StDxM42A', 1, '2022-03-16 18:13:05', 0, 3),
 (584, '2022-03-10 11:10:02', 'hbujZbgt', 0, NULL, 0, 3),
 (585, '2022-03-10 11:10:02', 'X3UdZBhs', 0, NULL, 0, 3),
 (586, '2022-03-10 11:10:02', 'GCBSsCH3', 0, NULL, 0, 3),
-(587, '2022-03-10 11:10:02', 'JuxANSb9', 0, NULL, 0, 3),
+(587, '2022-03-10 11:10:02', 'JuxANSb9', 1, '2022-03-16 20:04:51', 0, 3),
 (588, '2022-03-10 11:10:02', '6bUh64fG', 0, NULL, 0, 3),
 (589, '2022-03-10 11:10:02', '7xq7L43x', 1, '2022-03-16 16:05:40', 0, 3),
-(590, '2022-03-10 11:10:02', 'oA2dNe3e', 0, NULL, 0, 3),
+(590, '2022-03-10 11:10:02', 'oA2dNe3e', 1, '2022-03-16 18:34:49', 0, 3),
 (591, '2022-03-10 11:10:02', 'f7EiehvE', 0, NULL, 0, 3),
 (592, '2022-03-10 11:10:02', 'KDZXPNGV', 0, NULL, 0, 3),
 (593, '2022-03-10 11:10:02', 'dfQM6DAJ', 0, NULL, 0, 3),
-(594, '2022-03-10 11:10:02', 'tV9rT2sJ', 0, NULL, 0, 3),
+(594, '2022-03-10 11:10:02', 'tV9rT2sJ', 1, '2022-03-16 20:07:23', 0, 3),
 (595, '2022-03-10 11:10:02', 'RoLKpMcJ', 0, NULL, 0, 3),
 (596, '2022-03-10 11:10:02', 'nTRdEnAS', 0, NULL, 0, 3),
-(597, '2022-03-10 11:10:02', '8yUkty9v', 0, NULL, 0, 3),
+(597, '2022-03-10 11:10:02', '8yUkty9v', 1, '2022-03-16 18:15:02', 0, 3),
 (598, '2022-03-10 11:10:02', 'hjvEoqzR', 0, NULL, 0, 3),
 (599, '2022-03-10 11:10:02', 'diS3LyXV', 0, NULL, 0, 3),
 (600, '2022-03-10 11:10:02', 'PrtFAm8N', 0, NULL, 0, 3),
-(601, '2022-03-10 11:10:02', 'ZTYV8wvR', 0, NULL, 0, 3),
+(601, '2022-03-10 11:10:02', 'ZTYV8wvR', 1, '2022-03-16 20:06:11', 0, 3),
 (602, '2022-03-10 11:10:02', 'maq9GVg6', 0, NULL, 0, 3),
 (603, '2022-03-10 11:10:02', 'wRdEwS6i', 0, NULL, 0, 3),
-(604, '2022-03-10 11:10:02', 'DYDRiZZX', 0, NULL, 0, 3),
-(605, '2022-03-10 11:10:02', 'yJ2h3cfZ', 0, NULL, 0, 3),
+(604, '2022-03-10 11:10:02', 'DYDRiZZX', 1, '2022-03-16 20:52:39', 0, 3),
+(605, '2022-03-10 11:10:02', 'yJ2h3cfZ', 1, '2022-03-16 20:48:42', 0, 3),
 (606, '2022-03-10 11:10:02', 'dMkTh3oV', 0, NULL, 0, 3),
 (607, '2022-03-10 11:10:02', '7kVU4iTY', 0, NULL, 0, 3),
-(608, '2022-03-10 11:10:02', 'PAGz2RTa', 0, NULL, 0, 3),
+(608, '2022-03-10 11:10:02', 'PAGz2RTa', 1, '2022-03-16 18:36:22', 0, 3),
 (609, '2022-03-10 11:10:02', 'wTV8wpte', 0, NULL, 0, 3),
 (610, '2022-03-10 11:10:02', 'M5eVNLHZ', 1, '2022-03-15 18:39:44', 0, 3),
-(611, '2022-03-10 11:10:02', 'hCHjSjRy', 0, NULL, 0, 3),
+(611, '2022-03-10 11:10:02', 'hCHjSjRy', 1, '2022-03-16 20:02:13', 0, 3),
 (612, '2022-03-10 11:10:02', 'xd9XctMx', 0, NULL, 0, 3),
 (613, '2022-03-10 11:10:02', 'FcJPHnpk', 0, NULL, 0, 3),
 (614, '2022-03-10 11:10:02', 'YGZA5tCR', 1, '2022-03-15 17:21:37', 0, 3),
@@ -655,7 +655,7 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (621, '2022-03-10 11:10:02', 'HVd9YnK7', 0, NULL, 0, 3),
 (622, '2022-03-10 11:10:02', 'NdgJXP4j', 1, '2022-03-15 18:51:52', 0, 3),
 (623, '2022-03-10 11:10:02', '9gm2BJwA', 1, '2022-03-15 17:13:32', 0, 3),
-(624, '2022-03-10 11:10:02', 'kidg2eKh', 0, NULL, 0, 3),
+(624, '2022-03-10 11:10:02', 'kidg2eKh', 1, '2022-03-16 17:33:34', 0, 3),
 (625, '2022-03-10 11:10:02', 'VTYxANSG', 1, '2022-03-15 17:16:01', 0, 3),
 (626, '2022-03-10 11:10:02', 'VkFsWwBb', 0, NULL, 0, 3),
 (627, '2022-03-10 11:10:02', '6S37KLo3', 0, NULL, 0, 3),
@@ -663,8 +663,8 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (629, '2022-03-10 11:10:02', 'AUBp2ji2', 0, NULL, 0, 3),
 (630, '2022-03-10 11:10:02', 'wDC2cKUE', 0, NULL, 0, 3),
 (631, '2022-03-10 11:10:02', 'Y6eTrPnu', 1, '2022-03-16 16:10:45', 0, 3),
-(632, '2022-03-10 11:10:02', 'u8Rxn9bN', 0, NULL, 0, 3),
-(633, '2022-03-10 11:10:02', 'oTQxeCZb', 0, NULL, 0, 3),
+(632, '2022-03-10 11:10:02', 'u8Rxn9bN', 1, '2022-03-16 17:14:38', 0, 3),
+(633, '2022-03-10 11:10:02', 'oTQxeCZb', 1, '2022-03-16 17:03:08', 0, 3),
 (634, '2022-03-10 11:10:02', '34geNH4K', 0, NULL, 0, 3),
 (635, '2022-03-10 11:10:02', 'n3FJw2FZ', 1, '2022-03-15 17:19:39', 0, 3),
 (636, '2022-03-10 11:10:02', 'mfg43S6i', 0, NULL, 0, 3),
@@ -915,7 +915,8 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (881, '2022-03-10 11:10:02', '553VB2bm', 0, NULL, 0, 3),
 (882, '2022-03-10 11:10:02', 'kK28TzX3', 0, NULL, 0, 3),
 (883, '2022-03-10 11:10:02', 'Mwe5tKfF', 0, NULL, 0, 3),
-(884, '2022-03-10 11:10:02', 'DS6vJxWP', 0, NULL, 0, 3),
+(884, '2022-03-10 11:10:02', 'DS6vJxWP', 0, NULL, 0, 3);
+INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`, `municipalityID`) VALUES
 (885, '2022-03-10 11:10:02', 'BqgHAQVH', 0, NULL, 0, 3),
 (886, '2022-03-10 11:10:02', 'pAmjickP', 0, NULL, 0, 3),
 (887, '2022-03-10 11:10:02', 'bws2vUvb', 0, NULL, 0, 3),
@@ -932,8 +933,7 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 (898, '2022-03-10 11:10:02', 'f4tSoCU8', 0, NULL, 0, 3),
 (899, '2022-03-10 11:10:02', 'MfeMCsFR', 0, NULL, 0, 3),
 (900, '2022-03-10 11:10:02', 'aUiBwVTB', 0, NULL, 0, 3),
-(901, '2022-03-10 11:10:02', 'tW9LiYma', 0, NULL, 0, 3);
-INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`, `municipalityID`) VALUES
+(901, '2022-03-10 11:10:02', 'tW9LiYma', 0, NULL, 0, 3),
 (902, '2022-03-10 11:10:02', 'oc3vXL5F', 0, NULL, 0, 3),
 (903, '2022-03-10 11:10:02', 'FmBT6cz3', 0, NULL, 0, 3),
 (904, '2022-03-10 11:10:02', 'BZWmYk7D', 0, NULL, 0, 3),
@@ -1048,20 +1048,20 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `member`
+-- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
-  `memberID` int NOT NULL,
-  `memberFirstName` varchar(128) NOT NULL,
-  `memberLastName` varchar(128) NOT NULL,
-  `memberListOrder` int NOT NULL,
-  `memberPicture` varchar(128) NOT NULL DEFAULT 'placeholder-member.png',
-  `partyID` int NOT NULL
+  `memberID` int(11) NOT NULL,
+  `memberFirstName` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `memberLastName` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `memberListOrder` int(11) NOT NULL,
+  `memberPicture` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'placeholder-member.png',
+  `partyID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `member`
+-- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberListOrder`, `memberPicture`, `partyID`) VALUES
@@ -1274,16 +1274,16 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `municipality`
+-- Table structure for table `municipality`
 --
 
 CREATE TABLE `municipality` (
-  `municipalityID` int NOT NULL,
-  `municipalityname` varchar(50) NOT NULL
+  `municipalityID` int(11) NOT NULL,
+  `municipalityname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `municipality`
+-- Dumping data for table `municipality`
 --
 
 INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
@@ -1296,19 +1296,19 @@ INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `party`
+-- Table structure for table `party`
 --
 
 CREATE TABLE `party` (
-  `partyID` int NOT NULL,
-  `partyname` varchar(64) NOT NULL,
-  `partyinfo` varchar(1024) NOT NULL,
-  `partylogo` varchar(64) NOT NULL,
-  `municipalityID` int NOT NULL
+  `partyID` int(11) NOT NULL,
+  `partyname` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `partyinfo` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `partylogo` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `municipalityID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `party`
+-- Dumping data for table `party`
 --
 
 INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipalityID`) VALUES
@@ -1325,17 +1325,47 @@ INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipa
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `vote`
+-- Table structure for table `results2022`
 --
 
-CREATE TABLE `vote` (
-  `voteID` int NOT NULL,
-  `codeID` int NOT NULL,
-  `memberID` int NOT NULL
+CREATE TABLE `results2022` (
+  `partyID` int(11) NOT NULL,
+  `partyName` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `votes` int(11) NOT NULL,
+  `heleZetels` float NOT NULL,
+  `decimaleZetels` float NOT NULL,
+  `zetels` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `vote`
+-- Dumping data for table `results2022`
+--
+
+INSERT INTO `results2022` (`partyID`, `partyName`, `votes`, `heleZetels`, `decimaleZetels`, `zetels`) VALUES
+(3, 'CDA', 18, 4.70269, 0.702686, 5),
+(4, 'Seniorenpartij Schagen', 10, 2.6126, 0.612603, 3),
+(5, 'VVD', 22, 5.74773, 0.747727, 6),
+(6, 'JessLokaal', 7, 1.82882, 0.828822, 2),
+(7, 'Partij van de Arbeid (P.v.d.A.)', 10, 2.6126, 0.612603, 2),
+(8, 'GROENLINKS', 16, 4.18017, 0.180165, 4),
+(9, 'D66', 12, 3.13512, 0.135124, 3),
+(10, 'SP (Socialistische Partij)', 8, 2.09008, 0.0900826, 2),
+(11, 'Wens4U (wij en Schagen voor u)', 8, 2.09008, 0.0900826, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vote`
+--
+
+CREATE TABLE `vote` (
+  `voteID` int(11) NOT NULL,
+  `codeID` int(11) NOT NULL,
+  `memberID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `vote`
 --
 
 INSERT INTO `vote` (`voteID`, `codeID`, `memberID`) VALUES
@@ -1395,40 +1425,94 @@ INSERT INTO `vote` (`voteID`, `codeID`, `memberID`) VALUES
 (165, 589, 13),
 (166, 13, 77),
 (167, 126, 13),
-(168, 631, 177);
+(168, 631, 177),
+(169, 12, 97),
+(170, 15, 195),
+(171, 30, 195),
+(172, 24, 124),
+(173, 633, 77),
+(174, 140, 181),
+(175, 632, 96),
+(176, 533, 64),
+(177, 624, 89),
+(178, 130, 44),
+(179, 123, 82),
+(180, 125, 29),
+(181, 116, 5),
+(182, 528, 86),
+(183, 137, 187),
+(184, 569, 77),
+(185, 63, 222),
+(186, 576, 221),
+(187, 583, 54),
+(188, 597, 181),
+(189, 69, 181),
+(190, 56, 181),
+(191, 132, 193),
+(192, 43, 221),
+(193, 540, 55),
+(194, 590, 79),
+(195, 608, 185),
+(196, 76, 94),
+(197, 611, 94),
+(198, 118, 1),
+(199, 70, 76),
+(200, 587, 126),
+(201, 601, 210),
+(202, 594, 177),
+(203, 559, 51),
+(204, 535, 194),
+(205, 580, 5),
+(206, 566, 2),
+(207, 37, 194),
+(208, 573, 127),
+(209, 552, 93),
+(210, 91, 127),
+(211, 112, 1),
+(212, 605, 210),
+(213, 115, 230),
+(214, 546, 76),
+(215, 604, 124),
+(216, 553, 181),
+(217, 567, 181),
+(218, 22, 180),
+(219, 42, 210),
+(220, 544, 194),
+(221, 574, 222),
+(222, 560, 60);
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `code`
+-- Indexes for table `code`
 --
 ALTER TABLE `code`
   ADD PRIMARY KEY (`codeID`);
 
 --
--- Indexen voor tabel `member`
+-- Indexes for table `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`memberID`),
   ADD KEY `party` (`partyID`);
 
 --
--- Indexen voor tabel `municipality`
+-- Indexes for table `municipality`
 --
 ALTER TABLE `municipality`
   ADD PRIMARY KEY (`municipalityID`);
 
 --
--- Indexen voor tabel `party`
+-- Indexes for table `party`
 --
 ALTER TABLE `party`
   ADD PRIMARY KEY (`partyID`),
   ADD KEY `municipality` (`municipalityID`);
 
 --
--- Indexen voor tabel `vote`
+-- Indexes for table `vote`
 --
 ALTER TABLE `vote`
   ADD PRIMARY KEY (`voteID`),
@@ -1436,45 +1520,45 @@ ALTER TABLE `vote`
   ADD KEY `member` (`memberID`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `member`
+-- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `memberID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
--- AUTO_INCREMENT voor een tabel `party`
+-- AUTO_INCREMENT for table `party`
 --
 ALTER TABLE `party`
-  MODIFY `partyID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT voor een tabel `vote`
+-- AUTO_INCREMENT for table `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `voteID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `voteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `member`
+-- Constraints for table `member`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `party` FOREIGN KEY (`partyID`) REFERENCES `party` (`partyID`);
 
 --
--- Beperkingen voor tabel `party`
+-- Constraints for table `party`
 --
 ALTER TABLE `party`
   ADD CONSTRAINT `municipality` FOREIGN KEY (`municipalityID`) REFERENCES `municipality` (`municipalityID`);
 
 --
--- Beperkingen voor tabel `vote`
+-- Constraints for table `vote`
 --
 ALTER TABLE `vote`
   ADD CONSTRAINT `code` FOREIGN KEY (`codeID`) REFERENCES `code` (`codeID`),

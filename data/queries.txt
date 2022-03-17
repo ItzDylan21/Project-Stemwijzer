@@ -1,6 +1,18 @@
-1. SELECT COUNT(*) FROM 'vote'
-2. SELECT COUNT(*) FROM 'vote' WHERE memberID = <Vul id in>
+1. SELECT COUNT(*) FROM `vote`
+2. SELECT COUNT(*) FROM `vote` WHERE memberID = <Vul id in>
 3. SELECT COUNT(*) AS aantalStemmen, party.partyname FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY aantalStemmen DESC 
 4. SELECT COUNT(*) / 29 FROM `vote`
-5. SELECT FLOOR(COUNT(*) / 1.9655) AS heleZetels, party.partyname AS partyName FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY `heleZetels` DESC 
-6. 
+5. SELECT FLOOR(COUNT(*) / 3.8276) AS heleZetels, party.partyname AS partyName FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY `heleZetels` DESC 
+6. SELECT 29 - SUM(FLOOR(COUNT(*) / 3.8276)) OVER() AS restZetels FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID LIMIT 1 
+7. SELECT COUNT(*) / 3.8276 - FLOOR(COUNT(*) / 3.8276) AS decimaleZetels, party.partyname AS partyName FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID ORDER BY decimaleZetels DESC LIMIT 4 
+
+
+
+
+
+<VOOR ALLES>
+INSERT INTO results2022(partyID, partyName, votes, heleZetels, decimaleZetels, zetels)
+
+SELECT party.partyID, party.partyname, COUNT(*) as votes, COUNT(*) / 3.8276 as heleZetels, count(*) / 3.8276 - FLOOR(count(*) / 3.8276) as decimaleZetels, FLOOR(COUNT(*) / 3.8276) as zetels FROM `vote` INNER JOIN member ON vote.memberID = member.memberID INNER JOIN party ON member.partyID = party.partyID GROUP BY member.partyID;
+
+UPDATE results2022 set zetels = zetels + 1 ORDER BY decimaleZetels DESC LIMIT 4
