@@ -365,3 +365,8 @@ input[type="text"] {
   text-align: center;
   color: #707070;
 }
+/*This is the styling for the piechart*/
+.piechart {
+  width: 900px; 
+  height: 500px;
+}
