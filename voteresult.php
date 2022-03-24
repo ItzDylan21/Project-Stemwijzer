@@ -12,21 +12,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
     <title>StemApplicatie</title>
-
-    <?php 
-        $query = "SELECT COUNT(vote.memberID) AS 'AantalStemmen', party.partyname AS 'Partij'
-        FROM vote
-        INNER JOIN member ON vote.memberID = member.memberID
-        INNER JOIN party ON party.partyID = member.partyID
-        GROUP BY party.partyID 
-        ORDER BY COUNT(vote.memberID) DESC;";
-        $result = mysqli_query($conn, $query);
-    
-        while($value = mysqli_fetch_assoc($result)){
-            echo $value['Partij'].$value['AantalStemmen'];
-                    }
-      ?>
-
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -37,6 +22,13 @@
         var data = google.visualization.arrayToDataTable([
           ['Partij', 'AantalStemmen'],
           <?php
+                  $query = "SELECT COUNT(vote.memberID) AS 'AantalStemmen', party.partyname AS 'Partij'
+                  FROM vote
+                  INNER JOIN member ON vote.memberID = member.memberID
+                  INNER JOIN party ON party.partyID = member.partyID
+                  GROUP BY party.partyID 
+                  ORDER BY COUNT(vote.memberID) DESC;";
+                  $result = mysqli_query($conn, $query);
                           while($row = mysqli_fetch_array($result))
                           {
                                echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."],";
@@ -46,7 +38,7 @@
         ]);
 
         var options = {
-          title: 'My Daily Activities',  
+          title: 'Resultaten stemmen',  
                       //is3D:true,  
                       pieHole: 0.4  
         };
