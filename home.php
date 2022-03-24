@@ -15,6 +15,9 @@
             <a href="municipalityselection.php">
                 <button>Overzicht partijen</button>
             </a>
+            <a href="voteresult.php">
+                <button>Resultaten</button>
+            </a>
         </div>
     </div>
     <div class="container-home">
