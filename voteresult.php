@@ -14,14 +14,19 @@
     <title>StemApplicatie</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+      // Load Charts and the corechart and barchart packages.
       google.charts.load('current', {'packages':['corechart']});
+
+      // Draw the pie chart and bar chart when Charts is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Partij', 'AantalStemmen'],
-          <?php
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            <?php
                   $query = "SELECT COUNT(vote.memberID) AS 'AantalStemmen', party.partyname AS 'Partij'
                   FROM vote
                   INNER JOIN member ON vote.memberID = member.memberID
@@ -31,21 +36,25 @@
                   $result = mysqli_query($conn, $query);
                           while($row = mysqli_fetch_array($result))
                           {
-                               echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."],";
+                            echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."], \n";
                           }
                           ?>
-        
         ]);
+        
 
-        var options = {
-          title: 'Resultaten stemmen',  
-                      //is3D:true,  
-                      pieHole: 0.4  
-        };
+        var piechart_options = {title:'Cirkeldiagram: Stemmen per partij',
+                       width:900,
+                       height:500};
+        var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+        piechart.draw(data, piechart_options);
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var barchart_options = {title:'Staafdiagram: Aantal stemmen per partij',
+                       width:900,
+                       height:500,
+                       legend: 'none'};
+        var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        barchart.draw(data, barchart_options);
 
-        chart.draw(data, options);
       }
 
     </script>
@@ -69,7 +78,13 @@
             <option value = "2018">2018</option>
             <option value = "2022">2022</option>
         </select>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <table class="columns">
+      <tr>
+        <td><div id="piechart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="barchart_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
+
 
         <?php
 
