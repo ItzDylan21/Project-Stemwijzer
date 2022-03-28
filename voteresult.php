@@ -23,8 +23,8 @@
       function drawChart() {
 
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Partijnaam');
+        data.addColumn('number', 'Stemmen');
         data.addRows([
             <?php
                   $query = "SELECT COUNT(vote.memberID) AS 'AantalStemmen', party.partyname AS 'Partij'
@@ -33,18 +33,30 @@
                   INNER JOIN party ON party.partyID = member.partyID
                   GROUP BY party.partyID 
                   ORDER BY COUNT(vote.memberID) DESC;";
-                  $result = mysqli_query($conn, $query);
-                          while($row = mysqli_fetch_array($result))
-                          {
+                  $stmt = mysqli_stmt_init($conn);
+                    if (!mysqli_stmt_prepare($stmt,$query)) {
+                        echo "SQL statement failed";
+                    } else{
+                        mysqli_stmt_execute($stmt);
+                        $result = mysqli_stmt_get_result($stmt);
+                
+                        while ($row = mysqli_fetch_assoc($result)) {
                             echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."], \n";
-                          }
-                          ?>
+                        }
+                    }
+                //   $result = mysqli_query($conn, $query);
+                //           while($row = mysqli_fetch_array($result))
+                //           {
+                //             echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."], \n";
+                //           }
+                //           ?>
         ]);
         
 
         var piechart_options = {title:'Cirkeldiagram: Stemmen per partij',
                        width:900,
-                       height:500};
+                       height:500,
+                       is3D: true};
         var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         piechart.draw(data, piechart_options);
 
@@ -75,8 +87,8 @@
         <label for="year">Kies een jaar:</label>
 
         <select name="year" id="year">
-            <option value = "2018">2018</option>
             <option value = "2022">2022</option>
+            <option value = "2018">2018</option>
         </select>
         <table class="columns">
       <tr>
