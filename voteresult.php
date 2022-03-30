@@ -64,7 +64,7 @@
                        width:900,
                        height:500,
                        legend: 'none'};
-        var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        var barchart = new google.visualization.ColumnChart(document.getElementById('barchart_div'));
         barchart.draw(data, barchart_options);
 
       }
