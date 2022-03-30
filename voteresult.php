@@ -29,13 +29,11 @@
         data.addColumn('number', 'Zetels');
         data.addRows([
             <?php
-                  $query = "SELECT * FROM ?";
-                  $selected = $_POST['year'];
+                  $query = "SELECT * FROM `results2022`";
                   $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $query)) {
                         echo "SQL statement failed";
                     } else{
-                        mysqli_stmt_bind_param($stmt, "s", $selected);
                         mysqli_stmt_execute($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                 
@@ -80,12 +78,10 @@
     </div>
     <div class="container-home">
         <label for="year">Kies een jaar:</label>
-    <form action="" method="post">
         <select name="year" id="year">
-            <option value = "results2022">2022</option>
-            <option value = "results2018">2018</option>
+            <option value = "2022">2022</option>
+            <option value = "2018">2018</option>
         </select>
-    </form>
     </div>
     <div id="columns">
         <div id="piechart_div" class="chart"  style="flex-basis 50%; height: 500px;"></div>

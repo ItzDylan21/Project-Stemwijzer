@@ -366,7 +366,15 @@ input[type="text"] {
   color: #707070;
 }
 /*This is the styling for the piechart*/
-.piechart {
-  width: 900px; 
-  height: 500px;
+.chart {
+  min-height: 450px;
+  min-width: 800px;
+  font-size: 1.2em;
+}
+#columns {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
