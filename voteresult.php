@@ -11,9 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>StemApplicatie</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+    
       // Load Charts and the corechart and barchart packages.
       google.charts.load('current', {'packages':['corechart']});
 
@@ -27,11 +29,13 @@
         data.addColumn('number', 'Zetels');
         data.addRows([
             <?php
-                  $query = "SELECT * FROM `results2022`";
+                  $query = "SELECT * FROM ?";
+                  $selected = $_POST['year'];
                   $stmt = mysqli_stmt_init($conn);
-                    if (!mysqli_stmt_prepare($stmt,$query)) {
+                    if (!mysqli_stmt_prepare($stmt, $query)) {
                         echo "SQL statement failed";
                     } else{
+                        mysqli_stmt_bind_param($stmt, "s", $selected);
                         mysqli_stmt_execute($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                 
@@ -44,21 +48,21 @@
         
 
         var piechart_options = {title:'Cirkeldiagram: Stemmen per partij',
-                       width:900,
-                       height:500,
                        is3D: true,
                        pieSliceText: 'value'};
         var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         piechart.draw(data, piechart_options);
 
         var barchart_options = {title:'Staafdiagram: Aantal stemmen per partij',
-                       width:900,
-                       height:500,
                        legend: 'none'};
         var barchart = new google.visualization.ColumnChart(document.getElementById('barchart_div'));
         barchart.draw(data, barchart_options);
 
       }
+      $(window).resize(function(){
+        PieChart();
+        ColumnChart();
+        });
 
     </script>
 </head>
@@ -76,33 +80,21 @@
     </div>
     <div class="container-home">
         <label for="year">Kies een jaar:</label>
-
+    <form action="" method="post">
         <select name="year" id="year">
-            <option value = "2022">2022</option>
-            <option value = "2018">2018</option>
+            <option value = "results2022">2022</option>
+            <option value = "results2018">2018</option>
         </select>
-        <table class="columns">
-      <tr>
-        <td><div id="piechart_div" style="border: 1px solid #ccc"></div></td>
-        <td><div id="barchart_div" style="border: 1px solid #ccc"></div></td>
-      </tr>
-    </table>
-
-
-        <?php
-
-
-
-
-
-
-?>
-
-       <!-- <div class="piechart"></div>-->
-        <?php
-
-        ?>
+    </form>
     </div>
+    <div id="columns">
+        <div id="piechart_div" class="chart"  style="flex-basis 50%; height: 500px;"></div>
+        <div id="barchart_div" class="chart"  style="flex-basis 50%: height: 500px;"></div>
+    </div>
+
+    <p>
+        Sheeesh
+    </p>
 <?php 
     // Footer file
     require 'includes/footer.inc.php';
