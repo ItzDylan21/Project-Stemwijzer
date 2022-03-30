@@ -24,7 +24,7 @@
 
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Partijnaam');
-        data.addColumn('number', 'Stemmen');
+        data.addColumn('number', 'Zetels');
         data.addRows([
             <?php
                   $query = "SELECT * FROM `results2022`";
