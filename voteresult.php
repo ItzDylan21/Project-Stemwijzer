@@ -27,12 +27,7 @@
         data.addColumn('number', 'Stemmen');
         data.addRows([
             <?php
-                  $query = "SELECT COUNT(vote.memberID) AS 'AantalStemmen', party.partyname AS 'Partij'
-                  FROM vote
-                  INNER JOIN member ON vote.memberID = member.memberID
-                  INNER JOIN party ON party.partyID = member.partyID
-                  GROUP BY party.partyID 
-                  ORDER BY COUNT(vote.memberID) DESC;";
+                  $query = "SELECT * FROM `results2022`";
                   $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt,$query)) {
                         echo "SQL statement failed";
@@ -41,22 +36,18 @@
                         $result = mysqli_stmt_get_result($stmt);
                 
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."], \n";
+                            echo "['".$row["partyName"]."', ".$row["zetels"]."], \n";
                         }
                     }
-                //   $result = mysqli_query($conn, $query);
-                //           while($row = mysqli_fetch_array($result))
-                //           {
-                //             echo "['".$row["Partij"]."', ".$row["AantalStemmen"]."], \n";
-                //           }
-                //           ?>
+            ?>
         ]);
         
 
         var piechart_options = {title:'Cirkeldiagram: Stemmen per partij',
                        width:900,
                        height:500,
-                       is3D: true};
+                       is3D: true,
+                       pieSliceText: 'value'};
         var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         piechart.draw(data, piechart_options);
 
@@ -64,7 +55,7 @@
                        width:900,
                        height:500,
                        legend: 'none'};
-        var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        var barchart = new google.visualization.ColumnChart(document.getElementById('barchart_div'));
         barchart.draw(data, barchart_options);
 
       }
