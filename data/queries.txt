@@ -8,7 +8,7 @@
 
 
 
-
+639.7241
 
 <VOOR ALLES>
 INSERT INTO results2022(partyID, partyName, votes, heleZetels, decimaleZetels, zetels)
