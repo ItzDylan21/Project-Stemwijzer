@@ -370,3 +370,7 @@ input[type="text"] {
   display: flex;
   text-align: center;
 }
+.labelclass {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}

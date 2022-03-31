@@ -25,10 +25,14 @@
 
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Partijnaam');
-        data.addColumn('number', 'Zetels');
+        data.addColumn('number', 'Zetels 2018');
+        data.addColumn('number', 'Zetels 2022');
         data.addRows([
             <?php
-                  $query = "SELECT * FROM results2022";
+                  $query = "SELECT results2018.partyName AS 'partijNaam' , results2018.zetels AS 'zetels2018', results2022.zetels AS 'zetels2022'
+                  FROM results2018
+                  INNER JOIN results2022
+                  ON results2018.partyID = results2022.partyID;";
                   $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $query)) {
                         echo "SQL statement failed";
@@ -38,44 +42,34 @@
                         $result = mysqli_stmt_get_result($stmt);
                 
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo "['".$row["partyName"]."', ".$row["zetels"]."], \n";
+                            echo "['".$row["partijNaam"]."', ".$row["zetels2018"].", ".$row["zetels2022"]."], \n";
                         }
                     }
             ?>
         ]);
         
-
-        var piechart_options = {title:'Cirkeldiagram: Stemmen per partij',
-            width:700, 
-            height:500,
-            is3D: true,
-            pieSliceText: 'value'};
-
-        var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
-        piechart.draw(data, piechart_options);
-
-        var barchart_options = {title:'Staafdiagram: Aantal stemmen per partij',
-            width:700, 
-            height:500,
-            legend: 'none'};
+        var barchart_options = {title:'Staafdiagram: Vergelijking zetels 2018 en 2022',
+            bar: {groupWidth: "65%"},
+            width:1000, 
+            height:600,
+            };
 
         var barchart = new google.visualization.ColumnChart(document.getElementById('barchart_div'));
         barchart.draw(data, barchart_options);
 
       }
      
-
     </script>
 </head>
 
 <body>
     <div class="container-1">
         <div class="header-logo">
-            <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
-            <a href="home.php">
+        <a href="home.php">
               <span class='gray-text'>Stem</span>
+        
         <span class="blue-text">Applicatie</span>
-
+        
         </a>
         </div>
         <div class="header-back">
@@ -86,9 +80,9 @@
     <div class="container-home">
     <label for="year">Kies een jaar:</label>      
         <select name="year" id="yearID" onchange= "location = this.value;">
-            <option value="voteresult2022.php">2022</option>
-            <option value="voteresult2018.php">2018</option>
-            <option value="votecompare.php">Vergelijken</option>
+        <option value="votecompare.php">Vergelijken</option>    
+        <option value="voteresult2022.php">2022</option>
+        <option value="voteresult2018.php">2018</option>
         </select>
     
     <div id="chart-wrap">

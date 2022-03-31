@@ -71,8 +71,12 @@
 <body>
     <div class="container-1">
         <div class="header-logo">
-            <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
-            <span class="gray-text">Stem</span><span class="blue-text">Applicatie</span>
+        <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
+        <a href="home.php">
+              <span class='gray-text'>Stem</span>
+        <span class="blue-text">Applicatie</span>
+
+        </a>
         </div>
         <div class="header-back">
             <!-- This button brings the user to the party overview page-->
@@ -80,12 +84,12 @@
         </div>
     </div>
     <div class="container-home">
-        <label for="year">Kies een jaar:</label>      
+    <label for="year">Kies een jaar:</label>      
         <select name="year" id="yearID" onchange= "location = this.value;">
             <option value="voteresult2018.php">2018</option>
             <option value="voteresult2022.php">2022</option>
+            <option value="votecompare.php">Vergelijken</option>
         </select>
-    
     <div id="chart-wrap">
         <div id="piechart_div"></div>
         <div id="barchart_div"></div>
