@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 03:46 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Host: localhost
+-- Gegenereerd op: 31 mrt 2022 om 11:12
+-- Serverversie: 10.4.21-MariaDB
+-- PHP-versie: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `code`
+-- Tabelstructuur voor tabel `code`
 --
 
 CREATE TABLE `code` (
@@ -38,7 +38,7 @@ CREATE TABLE `code` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `code`
+-- Gegevens worden geëxporteerd voor tabel `code`
 --
 
 INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed`, `usedAfterExpired`, `municipalityID`) VALUES
@@ -1048,7 +1048,7 @@ INSERT INTO `code` (`codeID`, `timeCreated`, `uniqueCode`, `codeUsed`, `timeUsed
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Tabelstructuur voor tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -1061,7 +1061,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `member`
+-- Gegevens worden geëxporteerd voor tabel `member`
 --
 
 INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberListOrder`, `memberPicture`, `partyID`) VALUES
@@ -1274,7 +1274,7 @@ INSERT INTO `member` (`memberID`, `memberFirstName`, `memberLastName`, `memberLi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `municipality`
+-- Tabelstructuur voor tabel `municipality`
 --
 
 CREATE TABLE `municipality` (
@@ -1283,7 +1283,7 @@ CREATE TABLE `municipality` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `municipality`
+-- Gegevens worden geëxporteerd voor tabel `municipality`
 --
 
 INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
@@ -1296,7 +1296,7 @@ INSERT INTO `municipality` (`municipalityID`, `municipalityname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `party`
+-- Tabelstructuur voor tabel `party`
 --
 
 CREATE TABLE `party` (
@@ -1308,7 +1308,7 @@ CREATE TABLE `party` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `party`
+-- Gegevens worden geëxporteerd voor tabel `party`
 --
 
 INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipalityID`) VALUES
@@ -1320,12 +1320,44 @@ INSERT INTO `party` (`partyID`, `partyname`, `partyinfo`, `partylogo`, `municipa
 (8, 'GROENLINKS', 'Zit deze periode met 1 zetel in de gemeenteraad van Schagen. De huidige fractievoorzitter Lambert Riteco heeft voor deze verkiezingen het vertrouwen gekregen van het bestuur en leden en is wederom gekozen tot lijsttrekker: Het verkiezingsprogramma heet: Menselijk Eerlijk Duurzaam. ', 'groenlinks.png', 3),
 (9, 'D66', 'Is actief met 1 zetel in de Schagen gemeenteraad. Lijsttrekker voor deze gemeenteraadsverkiezingen is Frans Jansen. D66 wil extra aandacht voor de energietransitie en ziet, net als haar zusterpartij in Den Helder, waterstof als een realistische optie. ', 'd66.png', 3),
 (10, 'SP (Socialistische Partij)', 'Heeft  1 zetel in de gemeente Schagen. Wim Rijnders is fractievoorzitter en wordt ondersteund door 4 steunfractieleden. De lijsttrekker voor komende gemeenteraadsverkiezingen is de huidige fractievoorzitter, Wim Rijnders. Het verkiezingsprogramma richt zich op diverse pijlers, maar een van de belangrijkste is de woningnood in de gemeente Schagen.', 'sp.png', 3),
-(11, 'Wens4U (wij en Schagen voor u)', 'Heeft deze periode ook 1 zetel bemachtigd in de gemeenteraad van Schagen. de huidige fractievoorzitter is tevens de lijsttrekker voor komende verkiezingen, Merieke Bredewold.', 'wens4u.png', 3);
+(11, 'Wens4U (wij en Schagen voor u)', 'Heeft deze periode ook 1 zetel bemachtigd in de gemeenteraad van Schagen. de huidige fractievoorzitter is tevens de lijsttrekker voor komende verkiezingen, Merieke Bredewold.', 'wens4u.png', 3),
+(16, 'Duurzaam Schagen', '<No info>', '', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `results2022`
+-- Tabelstructuur voor tabel `results2018`
+--
+
+CREATE TABLE `results2018` (
+  `partyID` int(11) NOT NULL,
+  `partyName` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `votes` int(11) NOT NULL,
+  `heleZetels` float NOT NULL,
+  `decimaleZetels` float NOT NULL,
+  `zetels` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `results2018`
+--
+
+INSERT INTO `results2018` (`partyID`, `partyName`, `votes`, `heleZetels`, `decimaleZetels`, `zetels`) VALUES
+(3, 'CDA', 6276, 8.83643, 0.836432, 9),
+(4, 'Seniorenpartij Schagen', 2920, 4.11128, 0.111278, 4),
+(5, 'VVD', 2605, 3.66777, 0.667767, 4),
+(6, 'JessLokaal', 2290, 3.22426, 0.224256, 3),
+(7, 'Partij van de Arbeid (P.v.d.A.)', 1854, 2.61038, 0.61038, 3),
+(8, 'GROENLINKS', 1221, 1.71913, 0.719134, 2),
+(9, 'D66', 943, 1.32772, 0.327718, 1),
+(10, 'SP (Socialistische Partij)', 875, 1.23198, 0.231975, 1),
+(11, 'Wens4U (wij en Schagen voor u)', 628, 0.884206, 0.884206, 1),
+(16, 'Duurzaam Schagen', 985, 1.38685, 0.386852, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `results2022`
 --
 
 CREATE TABLE `results2022` (
@@ -1338,7 +1370,7 @@ CREATE TABLE `results2022` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `results2022`
+-- Gegevens worden geëxporteerd voor tabel `results2022`
 --
 
 INSERT INTO `results2022` (`partyID`, `partyName`, `votes`, `heleZetels`, `decimaleZetels`, `zetels`) VALUES
@@ -1350,12 +1382,13 @@ INSERT INTO `results2022` (`partyID`, `partyName`, `votes`, `heleZetels`, `decim
 (8, 'GROENLINKS', 16, 4.18017, 0.180165, 4),
 (9, 'D66', 12, 3.13512, 0.135124, 3),
 (10, 'SP (Socialistische Partij)', 8, 2.09008, 0.0900826, 2),
-(11, 'Wens4U (wij en Schagen voor u)', 8, 2.09008, 0.0900826, 2);
+(11, 'Wens4U (wij en Schagen voor u)', 8, 2.09008, 0.0900826, 2),
+(16, 'Duurzaam Schagen', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vote`
+-- Tabelstructuur voor tabel `vote`
 --
 
 CREATE TABLE `vote` (
@@ -1365,7 +1398,7 @@ CREATE TABLE `vote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `vote`
+-- Gegevens worden geëxporteerd voor tabel `vote`
 --
 
 INSERT INTO `vote` (`voteID`, `codeID`, `memberID`) VALUES
@@ -1482,37 +1515,37 @@ INSERT INTO `vote` (`voteID`, `codeID`, `memberID`) VALUES
 (222, 560, 60);
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `code`
+-- Indexen voor tabel `code`
 --
 ALTER TABLE `code`
   ADD PRIMARY KEY (`codeID`);
 
 --
--- Indexes for table `member`
+-- Indexen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`memberID`),
   ADD KEY `party` (`partyID`);
 
 --
--- Indexes for table `municipality`
+-- Indexen voor tabel `municipality`
 --
 ALTER TABLE `municipality`
   ADD PRIMARY KEY (`municipalityID`);
 
 --
--- Indexes for table `party`
+-- Indexen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD PRIMARY KEY (`partyID`),
   ADD KEY `municipality` (`municipalityID`);
 
 --
--- Indexes for table `vote`
+-- Indexen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD PRIMARY KEY (`voteID`),
@@ -1520,45 +1553,45 @@ ALTER TABLE `vote`
   ADD KEY `member` (`memberID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT voor een tabel `member`
 --
 ALTER TABLE `member`
   MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
--- AUTO_INCREMENT for table `party`
+-- AUTO_INCREMENT voor een tabel `party`
 --
 ALTER TABLE `party`
-  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `partyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `vote`
+-- AUTO_INCREMENT voor een tabel `vote`
 --
 ALTER TABLE `vote`
   MODIFY `voteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `member`
+-- Beperkingen voor tabel `member`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `party` FOREIGN KEY (`partyID`) REFERENCES `party` (`partyID`);
 
 --
--- Constraints for table `party`
+-- Beperkingen voor tabel `party`
 --
 ALTER TABLE `party`
   ADD CONSTRAINT `municipality` FOREIGN KEY (`municipalityID`) REFERENCES `municipality` (`municipalityID`);
 
 --
--- Constraints for table `vote`
+-- Beperkingen voor tabel `vote`
 --
 ALTER TABLE `vote`
   ADD CONSTRAINT `code` FOREIGN KEY (`codeID`) REFERENCES `code` (`codeID`),
