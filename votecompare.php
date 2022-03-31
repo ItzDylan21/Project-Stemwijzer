@@ -51,7 +51,7 @@
         var barchart_options = {title:'Staafdiagram: Vergelijking zetels 2018 en 2022',
             bar: {groupWidth: "65%"},
             width:1000, 
-            height:600,
+            height:500,
             };
 
         var barchart = new google.visualization.ColumnChart(document.getElementById('barchart_div'));
@@ -86,7 +86,6 @@
         </select>
     
     <div id="chart-wrap">
-        <div id="piechart_div"></div>
         <div id="barchart_div"></div>
     </div>
 

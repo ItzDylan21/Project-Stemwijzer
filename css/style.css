@@ -369,6 +369,7 @@ input[type="text"] {
 #chart-wrap {
   display: flex;
   text-align: center;
+  margin-bottom: 32px;
 }
 .labelclass {
   margin-top: 12px;
