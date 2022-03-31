@@ -15,7 +15,7 @@
             <a href="municipalityselection.php">
                 <button>Overzicht partijen</button>
             </a>
-            <a href="voteresult.php">
+            <a href="voteresult2022.php">
                 <button>Resultaten</button>
             </a>
         </div>
