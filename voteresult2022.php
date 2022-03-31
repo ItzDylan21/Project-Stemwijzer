@@ -73,10 +73,8 @@
         <div class="header-logo">
             <!--This makes up the logo, its done this way so we can easily change the words dynamically-->
             <a href="home.php">
-              <span class='gray-text'>Stem</span>
-        <span class="blue-text">Applicatie</span>
-
-        </a>
+              <span class='gray-text'>Stem</span><span class="blue-text">Applicatie</span>
+            </a>
         </div>
         <div class="header-back">
             <!-- This button brings the user to the party overview page-->

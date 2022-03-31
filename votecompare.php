@@ -66,11 +66,8 @@
     <div class="container-1">
         <div class="header-logo">
         <a href="home.php">
-              <span class='gray-text'>Stem</span>
-        
-        <span class="blue-text">Applicatie</span>
-        
-        </a>
+              <span class='gray-text'>Stem</span><span class="blue-text">Applicatie</span>
+            </a>
         </div>
         <div class="header-back">
             <!-- This button brings the user to the party overview page-->
